@@ -1,6 +1,6 @@
-#Link-Sling
+# Link-Sling
 
-##Idea
+## Idea
 
 SMS backed free website that will send weblinks/messages to numbers on all mobile networks with 3 criteria being met:
 
@@ -8,7 +8,7 @@ SMS backed free website that will send weblinks/messages to numbers on all mobil
 * Phone number to send to
 * User info for who it was sent from
 
-##User Stories
+## User Stories
 
 1) No login, no account, free. Be able to send a web link or message via SMS to anyone by only entering the above 3 criteria.
 2) User account that can save contact info, send group messages/links, and use API to log in w/ Google+, Facebook, etc.
