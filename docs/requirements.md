@@ -16,8 +16,6 @@ SMS backed free website that will send weblinks/messages to numbers on all mobil
 
 3) School/Company use to send links/messages to specific groups set up by the individual user or set up by company/school w/ permissions to certain users.
 
-4) Being able to send Facebook links to non-facebook users so the original content is viewable by users not participating in Facebook.
-
 ## Stretch Goals
 
 * Serve adds that conform to the Acceptable Adds program and the EFF Do Not Track privacy standard.
