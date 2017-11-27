@@ -14,21 +14,21 @@
                         </div>
                     @endif
 
-                    <form class="form-horizontal" method="post" action="/messages">
+                    <form class="form-horizontal" method="POST" action="/text" role="form">
 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="form-group">
-                      <label for="recipients" class="col-sm-2 control-label">Link</label>
+                      <label for="link" class="col-sm-2 control-label">Link</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="link" id="subject" placeholder="Paste web link here...">
+                        <input type="text" class="form-control" name="link" id ="link" placeholder="Paste web link here...">
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="subject" class="col-sm-2 control-label">Recipient</label>
+                      <label for="recipient" class="col-sm-2 control-label">Recipient</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="recipient" id="subject" placeholder="Mobile number or Contact Name">
+                        <input type="text" class="form-control" name="recipient" id="recipient" placeholder="Mobile number or Contact Name">
                       </div>
                     </div>
 
@@ -36,7 +36,7 @@
 
                     <div class="form-group">
                       <div class="col-sm-12 text-center sling-nav">
-                        <button type="submit" name="button" value="send" class="btn btn-xs btn-default">Send</button>
+                        <button type="submit" class="btn btn-xs btn-default">Send</button>
                       </div>
                     </div>
 
