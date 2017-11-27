@@ -15,6 +15,7 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('twilio_SID', 34);
             $table->integer('sender_id')->unsigned();
             $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
             $table->tinyInteger('mobile');

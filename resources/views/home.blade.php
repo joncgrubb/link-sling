@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <form class="form-horizontal" method="POST" action="/text" role="form">
+                    <form class="form-horizontal" method="POST" action="/message" role="form">
 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
