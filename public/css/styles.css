@@ -1,2 +1,39 @@
 #__bs_notify__ { top:95% !important; right: 10px !important; border-radius: 15px !important; height:60px !important; }
 
+@import url('https://fonts.googleapis.com/css?family=Lobster|Raleway');
+
+/* 
+	FONTS:
+	font-family: 'Lobster', cursive;
+	font-family: 'Raleway', sans-serif;
+*/
+
+/* 
+	COLORS:
+	Light Blue: #4CA6FF;
+*/
+
+.brand {
+	font-family: 'Lobster', cursive;
+	color: #4CA6FF;
+	font-size: 40px;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px #ccc;
+}
+
+.sling-title {
+	text-align: center;
+	font-family: 'Lobster', cursive;
+	color: #4CA6FF;
+	font-size: 80px;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px #ccc;
+}
+
+.sling-blurb {
+	text-align: center;
+	display: inline-block;
+	margin-top: 50px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+}
