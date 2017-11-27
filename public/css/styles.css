@@ -14,6 +14,7 @@
 */
 
 .brand {
+	display: block;
 	font-family: 'Lobster', cursive;
 	color: #4CA6FF;
 	font-size: 40px;
@@ -36,4 +37,37 @@
 	margin-top: 50px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
+}
+
+body {
+	background-color: #F3F3F3;
+}
+
+.panel {
+	border: 1px solid #ccc;
+}
+
+.panel-heading {
+	border-bottom-color: #ccc !important;
+}
+
+.panel-body {
+	border-top: 0px;
+}
+
+.navbar {
+	border-bottom: 1px solid #ccc;
+	box-shadow: 0px 1px 5px #ccc;
+}
+
+.sling-nav button {
+	border-color: #4CA6FF;
+	color: #4CA6FF;
+}
+
+.sling-nav button:hover {
+	background-color: #4CA6FF;
+	color: white;
+	border-color: #4CA6FF;
+	box-shadow: 1px 1px 5px #ccc;
 }
