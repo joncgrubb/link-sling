@@ -36,7 +36,8 @@ class MessageController extends Controller
      */
     public function history()
     {
-        //
+        $messages = \Auth::user()->sent()->orderBy('id', 'desc')->get();
+        return view('messages.history', compact('messages'));
     }
 
     /**

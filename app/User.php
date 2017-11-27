@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function sent() {
+        return $this
+                ->hasMany('App\Message', 'sender_id')
+                ->where('sent_at', '!=', null)
+                ->where('is_deleted', '=', false);
+    }
 }

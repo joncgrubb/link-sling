@@ -57,7 +57,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav sling-nav">
                         <li><a href=""><button class="btn btn-default btn-sm">Contacts</button></a></li>
-                        <li><a href=""><button class="btn btn-default btn-sm">History</button></a></li>
+                        <li><a href="{{ url('/history') }}"><button class="btn btn-default btn-sm">History</button></a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
