@@ -5,15 +5,36 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Twilio;
+use Carbon\Carbon;
 
 class MessageController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        //
+    }
+
+    /**
+     * Display a table of sent messages.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function history()
     {
         //
     }
@@ -50,8 +71,17 @@ class MessageController extends Controller
                 'body' => $link . " | Sent By: " . \Auth::user()->name
             )
         );
-        print $message->sid;
-        // return route('home');
+
+        $msg_db = new \App\Message;
+        $msg_db->twilio_SID = $message->sid;
+        $msg_db->sender_id = \Auth::user()->id;
+        $msg_db->mobile = $number;
+        $msg_db->link = $link;
+        $msg_db->sent_at = Carbon::now();
+        $msg_db->save();
+
+        // print $message->sid;
+        return redirect('/home');
     }
 
     /**

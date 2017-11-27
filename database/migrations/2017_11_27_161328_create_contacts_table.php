@@ -18,7 +18,7 @@ class CreateContactsTable extends Migration
             $table->integer('owner')->unsigned();
             $table->foreign('owner')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
-            $table->tinyInteger('mobile');
+            $table->bigInteger('mobile');
             $table->timestamps();
         });
     }
