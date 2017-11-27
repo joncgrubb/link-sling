@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('/message', 'MessageController');
+
 Route::match(array('GET', 'POST'), '/incoming', function()
 {
   $twiml = new Twilio\Twiml();
