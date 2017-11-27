@@ -19,7 +19,12 @@
 	color: #4CA6FF;
 	font-size: 40px;
 	font-weight: bold;
-	text-shadow: 1px 1px 5px #ccc;
+	text-shadow: 1px 1px 5px #A3A3A3;
+}
+
+.brand:hover {
+	color: #93C9FF;
+	text-shadow: 1px 1px 2px #777;
 }
 
 .sling-title {
@@ -65,8 +70,14 @@ body {
 	color: #4CA6FF;
 }
 
+.active {
+	background-color:  #93C9FF !important;
+	color: white !important;
+	border-color: #4CA6FF !important;
+}
+
 .sling-nav button:hover {
-	background-color: #4CA6FF;
+	background-color: #4CA6FF !important;
 	color: white;
 	border-color: #4CA6FF;
 	box-shadow: 1px 1px 5px #ccc;
