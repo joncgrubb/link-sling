@@ -13,11 +13,10 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th></th>
                         <th>Recipient</th>
                         <th>Mobile</th>
                         <th>Date</th>
-                        <th></th>
+                        <th>Received</th>
 
                       </tr>
                     </thead>
@@ -25,12 +24,10 @@
 
                     @foreach ($messages as $message)
                       <tr>
-                        <td>
-                        </td>
                         <td>Contact Name Placeholder</td>
                         <td>{{ $message->mobile }}</td>
                         <td>{{ $message->dateFormat() }}</td>
-                        <td>
+                        <td><i class="fa fa-spinner" aria-hidden="true"></i>
                         </td>
                       </tr>
                     @endforeach
