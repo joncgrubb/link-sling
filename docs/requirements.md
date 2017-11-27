@@ -19,3 +19,12 @@ SMS backed free website that will send weblinks/messages to numbers on all mobil
 ## Stretch Goals
 
 * Serve adds that conform to the Acceptable Adds program and the EFF Do Not Track privacy standard.
+* Message history will show whether message was received.
+* O-Auth (give it half a day).
+
+## Additional Reqs
+
+* Everything behind Authorization with a Captcha (look into Captcha for at least half a day).
+* Authorization from receiver end to avoid abuse.
+* Message history with timestamps, message contents.
+* Can save contat list.
