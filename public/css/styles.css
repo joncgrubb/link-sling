@@ -113,26 +113,48 @@ body {
 	margin-bottom: 8px;
 }
 
-.contact-avatar {
-	border: 1px solid #4CA6FF;
-	background-color: #4CA6FF;
-	color: white;
-	border-radius: 50%;
-	width: 30%;
-	margin: auto;
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #4CA6FF;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  margin: auto;
 }
 
-.contact-avatar-modal {
-	display: inline-block;
-	text-align: center;
-	font-size: 40px;
-	padding: 10px;
-	border: 1px solid #4CA6FF;
-	background-color: #4CA6FF;
-	color: white;
-	border-radius: 50%;
-	width: 15%;
-	margin: auto;
-	margin-bottom: 15px;
-	box-shadow: 2px 2px 5px #ccc;
+.initials {
+  position: relative;
+  top: 10px; /* 25% of parent */
+  font-size: 20px; /* 50% of parent */
+  line-height: 20px; /* 50% of parent */
+  color: #fff;
+  font-weight: bold;
 }
+
+.avatar-circle-lg {
+  width: 80px;
+  height: 80px;
+  background-color: #4CA6FF;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+.initials-lg {
+  position: relative;
+  top: 20px; /* 25% of parent */
+  font-size: 40px; /* 50% of parent */
+  line-height: 40px; /* 50% of parent */
+  color: #fff;
+  font-weight: bold;
+}
+
+.contact-text {
+	margin-top: 6px;
+}
+

@@ -13,20 +13,29 @@
                     @foreach ($contacts as $contact)
                     <div class="row contact-row">
                         <div class="col-xs-2 text-center">
-                            <div class="contact-avatar">{{ str_limit($contact->name, $limit = 1, $end = '') }}</div>
+                            <div class="avatar-circle">
+                                <span class="initials">
+                                    {{ str_limit($contact->name, $limit = 1, $end = '') }}
+                                </span>
+                            </div>
                         </div>
-                        <div class="col-xs-5">
+                        <div class="col-xs-5 contact-text">
                             <a href="#contactModal{{ $contact->id }}" data-toggle="modal">
                                 {{ $contact->name }}
                             </a>
                         </div>
-                        <div class="col-xs-5 text-right">{{ $contact->mobile }}</div>
+                        <div class="col-xs-5 text-right contact-text">{{ $contact->mobile }}</div>
+                        
                         <div id="contactModal{{ $contact->id }}" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <span class="contact-avatar-modal">{{ str_limit($contact->name, $limit = 1, $end = '') }}</span>
+                                        <div class="avatar-circle-lg">
+                                            <span class="initials-lg">
+                                                {{ str_limit($contact->name, $limit = 1, $end = '') }}
+                                            </span>
+                                        </div>
                                         <h4 class="modal-title">{{ $contact->name }}</h4>
                                     </div>
                                     <div class="modal-body">
@@ -41,6 +50,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     @endforeach
                     
