@@ -69,7 +69,7 @@ class MessageController extends Controller
             $number, // Text this number
             array(
                 'from' => $_ENV['TWILIO_NUMBER'], // From a valid Twilio number
-                'body' => $link . " | Sent By: " . \Auth::user()->name
+                'body' => "Link-Sling : " . $link . " | Sent By: " . \Auth::user()->name
             )
         );
 

@@ -14,10 +14,10 @@
                     <thead>
                       <tr>
                         <th>Recipient</th>
+                        <th>Link</th>
                         <th>Mobile</th>
                         <th>Date</th>
                         <th>Received</th>
-
                       </tr>
                     </thead>
                     <tbody>
@@ -25,6 +25,7 @@
                     @foreach ($messages as $message)
                       <tr>
                         <td>Contact Name Placeholder</td>
+                        <td>{{ str_limit($message->link, $limit = 25, $end = '...') }}</td>
                         <td>{{ $message->mobile }}</td>
                         <td>{{ $message->dateFormat() }}</td>
                         <td><i class="fa fa-spinner" aria-hidden="true"></i>
