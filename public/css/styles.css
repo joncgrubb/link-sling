@@ -112,3 +112,27 @@ body {
 	margin-top: 8px;
 	margin-bottom: 8px;
 }
+
+.contact-avatar {
+	border: 1px solid #4CA6FF;
+	background-color: #4CA6FF;
+	color: white;
+	border-radius: 50%;
+	width: 30%;
+	margin: auto;
+}
+
+.contact-avatar-modal {
+	display: inline-block;
+	text-align: center;
+	font-size: 40px;
+	padding: 10px;
+	border: 1px solid #4CA6FF;
+	background-color: #4CA6FF;
+	color: white;
+	border-radius: 50%;
+	width: 15%;
+	margin: auto;
+	margin-bottom: 15px;
+	box-shadow: 2px 2px 5px #ccc;
+}

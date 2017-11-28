@@ -12,17 +12,21 @@
 
                     @foreach ($contacts as $contact)
                     <div class="row contact-row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-2 text-center">
+                            <div class="contact-avatar">{{ str_limit($contact->name, $limit = 1, $end = '') }}</div>
+                        </div>
+                        <div class="col-xs-5">
                             <a href="#contactModal{{ $contact->id }}" data-toggle="modal">
                                 {{ $contact->name }}
                             </a>
                         </div>
-                        <div class="col-xs-6">{{ $contact->mobile }}</div>
+                        <div class="col-xs-5 text-right">{{ $contact->mobile }}</div>
                         <div id="contactModal{{ $contact->id }}" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <span class="contact-avatar-modal">{{ str_limit($contact->name, $limit = 1, $end = '') }}</span>
                                         <h4 class="modal-title">{{ $contact->name }}</h4>
                                     </div>
                                     <div class="modal-body">
