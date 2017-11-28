@@ -91,3 +91,7 @@ body {
 	text-shadow: 1px 1px 5px #ccc;
 	font-weight: bold;
 }
+
+.modal-mobile {
+	color: #ccc;
+}
