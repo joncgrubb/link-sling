@@ -49,7 +49,7 @@
                         </td>
                         <td>{{ $message->mobile }}</td>
                         <td>{{ $message->dateFormat() }}</td>
-                        <td class="text-center"><i class="fa fa-spinner" aria-hidden="true"></i>
+                        <td class="text-center"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i>
                         </td>
                       </tr>
                     @endforeach
