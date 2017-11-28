@@ -11,7 +11,7 @@
                 <div class="panel-body">
 
                     @foreach ($contacts as $contact)
-                    <div class="row">
+                    <div class="row contact-row">
                         <div class="col-xs-6">
                             <a href="#contactModal{{ $contact->id }}" data-toggle="modal">
                                 {{ $contact->name }}
