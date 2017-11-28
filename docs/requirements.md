@@ -4,9 +4,9 @@
 
 SMS backed free website that will send weblinks/messages to numbers on all mobile networks with 3 criteria being met:
 
-* Link/message
-* Phone number to send to
-* User info for who it was sent from
+* [x] Link/message
+* [x] Phone number to send to
+* [x] User info for who it was sent from
 
 ## Requirements
 
