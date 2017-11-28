@@ -10,13 +10,13 @@ SMS backed free website that will send weblinks/messages to numbers on all mobil
 
 ## Requirements
 
-1) Be able to send a web link or message via SMS to anyone by only entering the above 3 criteria.
+1) [x] Be able to send a web link or message via SMS to anyone by only entering the above 3 criteria.
 
 2) User account that can save contact info, send group messages/links.
 
 3) Authorization from receiver end to avoid abuse.
 
-4) Message history with timestamps, message contents.
+4) [x] Message history with timestamps, message contents.
 
 ## Stretch Goals
 
