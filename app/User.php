@@ -33,4 +33,9 @@ class User extends Authenticatable
                 ->where('sent_at', '!=', null)
                 ->where('is_deleted', '=', false);
     }
+
+    public function contacts() {
+        return $this
+                ->hasMany('App\Contact', 'owner');
+    }
 }

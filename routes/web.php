@@ -23,6 +23,10 @@ Route::get('/history', 'MessageController@history');
 
 Route::resource('/message', 'MessageController');
 
+Route::get('/contacts', 'ContactController@contacts');
+
+Route::resource('/contact', 'ContactController');
+
 Route::match(array('GET', 'POST'), '/incoming', function()
 {
   $twiml = new Twilio\Twiml();
