@@ -56,6 +56,9 @@
                     
                 </div>
             </div>
+
+            <button class="btn btn-default add-contact"><span class="add-contact-plus">+</span></button>
+
         </div>
     </div>
 </div>

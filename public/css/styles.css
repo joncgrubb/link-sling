@@ -158,3 +158,22 @@ body {
 	margin-top: 6px;
 }
 
+.add-contact {
+	width: 60px;
+  height: 60px;
+  background-color: #4CA6FF;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  float: right;
+}
+
+.add-contact-plus {
+	position: relative;
+  top: 1px; /* 25% of parent */
+  font-size: 30px; /* 50% of parent */
+  line-height: 30px; /* 50% of parent */
+  color: #fff;
+}
