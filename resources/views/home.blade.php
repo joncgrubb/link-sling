@@ -28,7 +28,7 @@
                     <div class="form-group">
                       <label for="recipient" class="col-sm-2 control-label">Recipient</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="recipient" id="recipient" placeholder="Mobile number or Contact Name">
+                        {{-- <input type="text" class="form-control" name="recipient" id="recipient" placeholder="Mobile number or Contact Name"> --}}
                         <autocomplete></autocomplete>
                       </div>
                     </div>

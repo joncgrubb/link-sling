@@ -59,16 +59,19 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         // Get form inputs
-        $number = Input::get('recipient');
+        // $number = Input::get('recipient');  <-Old input
+        $contact = Input::get('recipient');
+        $number = \Auth::user()->contacts()->where('name', $contact)->first()->mobile;
         $link = Input::get('link');
-         
+
         // Create an authenticated client for the Twilio API
-        $client = new Twilio\Rest\Client($_ENV['TWILIO_ACCOUNT_SID'], $_ENV['TWILIO_AUTH_TOKEN']);
+        // $client = new Twilio\Rest\Client($_ENV['TWILIO_ACCOUNT_SID'], $_ENV['TWILIO_AUTH_TOKEN']);
+        $client = new Twilio\Rest\Client(env('TWILIO_ACCOUNT_SID'), env('TWILIO_AUTH_TOKEN'));
 
         $message = $client->messages->create(
             $number, // Text this number
             array(
-                'from' => $_ENV['TWILIO_NUMBER'], // From a valid Twilio number
+                'from' => env('TWILIO_NUMBER'), // From a valid Twilio number
                 'body' => "Link-Sling : " . $link . " | Sent By: " . \Auth::user()->name
             )
         );
