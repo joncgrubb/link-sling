@@ -42836,8 +42836,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 //
 //
 //
@@ -42855,22 +42853,24 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   data: function data() {
     return {
       query: '',
-      results: []
+      results: [],
+      hide: false
     };
   },
 
   methods: {
+    replaceInput: function replaceInput(result) {
+      this.query = result;
+      this.hide = true;
+    },
     autoComplete: function autoComplete() {
       var _this = this;
 
       this.results = [];
       if (this.query.length > 1) {
+        this.hide = false;
         axios.get('/search', { params: { query: this.query } }).then(function (response) {
-          console.log(response.status);
-          console.log('Query string: ' + _this.query);
           _this.results = response.data;
-          console.log(_this.results);
-          console.log(_typeof(_this.results));
         });
       }
     }
@@ -42909,15 +42909,24 @@ var render = function() {
       }
     }),
     _vm._v(" "),
-    _vm.results.length
+    _vm.results.length && _vm.hide == false
       ? _c("div", { staticClass: "panel-footer" }, [
           _c(
             "ul",
             { staticClass: "list-group" },
             _vm._l(_vm.results, function(result) {
-              return _c("li", { staticClass: "list-group-item" }, [
-                _vm._v("\n    " + _vm._s(result.name) + "\n   ")
-              ])
+              return _c(
+                "li",
+                {
+                  staticClass: "list-group-item",
+                  on: {
+                    click: function($event) {
+                      _vm.replaceInput(result.name)
+                    }
+                  }
+                },
+                [_vm._v("\n    " + _vm._s(result.name) + "\n   ")]
+              )
             })
           )
         ])
