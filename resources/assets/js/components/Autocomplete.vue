@@ -41,6 +41,11 @@
   li {
     cursor: pointer;
   }
+  li:hover {
+    background-color: #93C9FF;
+    border-color: #4CA6FF;
+    color: white;
+  }
   .panel-footer {
     border-radius: 5px;
     box-shadow: 1px 1px 5px #ccc;

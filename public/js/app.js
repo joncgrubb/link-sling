@@ -42998,7 +42998,7 @@ exports = module.exports = __webpack_require__(44)(undefined);
 
 
 // module
-exports.push([module.i, "\nli[data-v-3a5dcd9f] {\n  cursor: pointer;\n}\n.panel-footer[data-v-3a5dcd9f] {\n  border-radius: 5px;\n  -webkit-box-shadow: 1px 1px 5px #ccc;\n          box-shadow: 1px 1px 5px #ccc;\n}\n", ""]);
+exports.push([module.i, "\nli[data-v-3a5dcd9f] {\n  cursor: pointer;\n}\nli[data-v-3a5dcd9f]:hover {\n  background-color: #93C9FF;\n  border-color: #4CA6FF;\n  color: white;\n}\n.panel-footer[data-v-3a5dcd9f] {\n  border-radius: 5px;\n  -webkit-box-shadow: 1px 1px 5px #ccc;\n          box-shadow: 1px 1px 5px #ccc;\n}\n", ""]);
 
 // exports
 
