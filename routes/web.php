@@ -35,3 +35,5 @@ Route::match(array('GET', 'POST'), '/incoming', function()
   $response->header('Content-Type', 'text/xml');
   return $response;
 });
+
+Route::get('/search', 'ContactController@axiosGetContacts');

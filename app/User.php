@@ -38,4 +38,5 @@ class User extends Authenticatable
         return $this
                 ->hasMany('App\Contact', 'owner');
     }
+
 }
