@@ -114,5 +114,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script> $('.btn').mouseup(function() { this.blur() }) </script>
 </body>
 </html>
