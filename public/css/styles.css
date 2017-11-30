@@ -217,3 +217,14 @@ overflow: auto;
 }
 }
 
+.button-form {
+	display: inline;
+}
+
+a:focus {
+  outline: none;
+}
+
+i:focus {
+  outline: none;
+}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -153,6 +154,7 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('contacts')->where('id', $id)->delete();
+        return redirect('/contacts');
     }
 }

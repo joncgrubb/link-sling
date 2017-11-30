@@ -38,7 +38,12 @@
                                         <h4 class="modal-title">{{ $contact->name }}</h4>
                                         <span class="modal-edits">    
                                             <a href="#editContactModal{{ $contact->id }}" data-toggle="modal" data-dismiss="modal"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-                                            <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                                            {{-- <form class="button-form" method="POST" action="/contact/{{ $contact->id }}">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <button><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                                            </form> --}}
+                                            <a href="#deleteContactModal{{ $contact->id }}" data-toggle="modal" data-dismiss="modal"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                                         </span>
                                     </div>
                                     <div class="modal-body">
@@ -91,6 +96,34 @@
                                       </div>
 
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="deleteContactModal{{ $contact->id }}" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Confirm Delete Contact</h4>
+                                </div>
+                                <div class="modal-body">
+                                      <div class="form-group">
+                                        <p class="text-center">Are you sure you want to delete the contact: {{ $contact->name }}</p>
+                                      </div>
+
+                                      <div class="modal-footer">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 text-center sling-nav">
+                                                <form class="button-form" method="POST" action="/contact/{{ $contact->id }}">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button class="btn btn-xs btn-default">Delete</button>
+                                                </form>
+                                              <button type="button" class="btn btn-xs btn-default" data-dismiss="modal" data-toggle="modal" data-target="#contactModal{{ $contact->id }}">Close</button>
+                                            </div>
+                                        </div>
+                                      </div>
                                 </div>
                             </div>
                         </div>
