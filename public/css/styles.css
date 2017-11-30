@@ -203,3 +203,17 @@ body {
 	color: #666;
 	cursor: pointer;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+body {
+overflow-y: scroll;
+}
+body.modal-open {
+overflow-y: scroll;
+margin-right: -15px !important;
+}
+.modal {
+overflow: auto;
+}
+}
+

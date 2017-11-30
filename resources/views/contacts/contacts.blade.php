@@ -37,7 +37,7 @@
                                         </div>
                                         <h4 class="modal-title">{{ $contact->name }}</h4>
                                         <span class="modal-edits">    
-                                            <a href="#editContactModal{{ $contact->id }}" data-toggle="modal"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                                            <a href="#editContactModal{{ $contact->id }}" data-toggle="modal" data-dismiss="modal"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
                                             <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
                                         </span>
                                     </div>
@@ -84,8 +84,8 @@
                                       <div class="modal-footer">
                                         <div class="form-group">
                                             <div class="col-sm-12 text-center sling-nav">
-                                              <button type="submit" class="btn btn-xs btn-default">Save</button>
-                                              <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
+                                              <button type="submit" class="btn btn-xs btn-default" data-dismiss="modal" data-toggle="modal" data-target="#contactModal{{ $contact->id }}">Save</button>
+                                              <button type="button" class="btn btn-xs btn-default" data-dismiss="modal" data-toggle="modal" data-target="#contactModal{{ $contact->id }}">Close</button>
                                             </div>
                                         </div>
                                       </div>
@@ -131,7 +131,7 @@
 
                               <div class="modal-footer">
                                 <div class="form-group">
-                                    <div class="col-sm-12 text-center sling-nav">
+                                    <div class="col-sm-12 text-center sling-nav">  
                                       <button type="submit" class="btn btn-xs btn-default">Save</button>
                                       <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
                                     </div>
