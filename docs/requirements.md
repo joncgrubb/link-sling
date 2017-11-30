@@ -12,7 +12,7 @@ SMS backed free website that will send weblinks/messages to numbers on all mobil
 
 1) [x] Be able to send a web link or message via SMS to anyone by only entering the above 3 criteria.
 
-2) User account that can save contact info, send group messages/links.
+2) [x] User account that can save contact info, send messages and links.
 
 3) Authorization from receiver end to avoid abuse.
 
