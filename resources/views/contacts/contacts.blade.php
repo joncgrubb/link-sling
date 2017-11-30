@@ -24,7 +24,7 @@
                                 {{ $contact->name }}
                             </a>
                         </div>
-                        <div class="col-xs-5 text-right contact-text">{{ $contact->mobile }}</div>
+                        <div class="col-xs-5 text-right contact-text">{{ $contact->mobileFormat($contact->mobile) }}</div>
                         
                         <div id="contactModal{{ $contact->id }}" class="modal fade">
                             <div class="modal-dialog">
@@ -38,18 +38,14 @@
                                         <h4 class="modal-title">{{ $contact->name }}</h4>
                                         <span class="modal-edits">    
                                             <a href="#editContactModal{{ $contact->id }}" data-toggle="modal" data-dismiss="modal"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-                                            {{-- <form class="button-form" method="POST" action="/contact/{{ $contact->id }}">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-                                                <button><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
-                                            </form> --}}
+
                                             <a href="#deleteContactModal{{ $contact->id }}" data-toggle="modal" data-dismiss="modal"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                                         </span>
                                     </div>
                                     <div class="modal-body">
                                         <p>Contact Details</p>
                                         <p>
-                                            <i class="fa fa-mobile fa-2x" aria-hidden="true"></i> <span class="mobile-num-modal">{{ $contact->mobile }}</span>
+                                            <i class="fa fa-mobile fa-2x modal-mobile" aria-hidden="true"></i> <span class="mobile-num-modal">{{ $contact->mobileFormat($contact->mobile) }}</span>
                                         </p>
                                     </div>
                                     <div class="modal-footer sling-nav">

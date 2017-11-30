@@ -93,7 +93,7 @@ body {
 }
 
 .modal-mobile {
-	color: #ccc;
+	display: block;
 }
 
 .fa-check-circle-o {
@@ -102,6 +102,7 @@ body {
 
 .mobile-num-modal {
 	margin-left: 10px;
+	vertical-align: 30%;
 }
 
 .contact-row {
@@ -228,3 +229,4 @@ a:focus {
 i:focus {
   outline: none;
 }
+
