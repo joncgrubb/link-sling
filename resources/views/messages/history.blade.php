@@ -33,7 +33,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h4 class="modal-title">{{ $contacts->where('mobile', $message->mobile)->pluck('name')->first() }}</h4>
-                                            <h4 class="modal-title modal-mobile">{{ $message->mobile }}</h4>
+                                            <h4 class="modal-title modal-mobile">{{ $message->mobileFormat($message->mobile) }}</h4>
                                         </div>
                                         <div class="modal-body">
                                             <p>{{ $message->link }}</p>

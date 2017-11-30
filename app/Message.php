@@ -23,4 +23,9 @@ class Message extends Model
       $pretty = $sent->month . '/' . $sent->day . '/' . $sent->year . ' ' . $time;
       return $pretty;
     }
+
+    public function mobileFormat($mobile) {
+      $output = substr($mobile, 0, 3) . '-' . substr($mobile, 3, 3) . '-' . substr($mobile, 6);
+      return $output;
+    }
 }
