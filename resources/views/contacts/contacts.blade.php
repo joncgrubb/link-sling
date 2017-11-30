@@ -57,7 +57,50 @@
                 </div>
             </div>
 
-            <button class="btn btn-default add-contact"><span class="add-contact-plus">+</span></button>
+            <a href="#addContactModal" data-toggle="modal">
+                <button class="btn btn-default add-contact"><span class="add-contact-plus">+</span></button>
+            </a>
+
+            <div id="addContactModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Create Contact</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" method="POST" action="/contact" role="form">
+
+                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                              <div class="form-group">
+                                <label for="link" class="col-sm-2 control-label"><i class="fa fa-user fa-lg" aria-hidden="true"></i></label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="name" id ="name" placeholder="Contact Name">
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="recipient" class="col-sm-2 control-label"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i></label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile Number">
+                                </div>
+                              </div>
+
+                              <div class="modal-footer">
+                                <div class="form-group">
+                                    <div class="col-sm-12 text-center sling-nav">
+                                      <button type="submit" class="btn btn-xs btn-default">Save</button>
+                                      <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                              </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

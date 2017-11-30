@@ -35,7 +35,7 @@ class ContactController extends Controller
      */
     public function contacts()
     {
-        $contacts = \Auth::user()->contacts()->orderBy('id', 'asc')->get();
+        $contacts = \Auth::user()->contacts()->orderBy('name', 'asc')->get();
         return view('contacts.contacts', compact('contacts'));
     }
 
@@ -47,16 +47,6 @@ class ContactController extends Controller
     public function axiosGetContacts(Request $request)
     {
         $query = Input::get('query');
-        // $users = \Auth::user()->contacts()->where('name','like','%'. $query .'%')->get();
-        // $users = \Auth::user()->contacts()->where('name','like','%'. 'A' .'%')->get()->first()->name;
-        // $users = \Auth::user()->contacts()->where('name','like','%'. $query .'%')->first()->name;
-        // $users = [['name' => 'Amanda'], ['name' => 'Mom'], ['name' => 'Jonathan']];
-        // $object = \Auth::user()->contact()->where('name','like','%'. $query .'%')->get();
-        // \Auth::user()->contacts()->orderBy('id', 'asc')->get()->pluck('name')
-        // $users = \Auth::user()->contacts()->where('name','like','%'. 'm' .'%')->pluck('name')->first();
-        
-
-
 
         $users = \Auth::user()->contacts()->where('name','like','%'. $query .'%')->pluck('name');
         $contacts = [];
@@ -66,12 +56,6 @@ class ContactController extends Controller
             );
         }
         $test = $contacts;
-
-
-        // $test = \Auth::user()->where('name','like','%' . $query . '%')->get();
-
-
-
         // $test = [['name' => 'Amanda'], ['name' => 'Mom'], ['name' => 'Jonathan']];
 
         return response()->json($test);
@@ -89,14 +73,23 @@ class ContactController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Contact in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $name = Input::get('name');
+        $mobile = Input::get('mobile');
+
+        $contact_db = new \App\Contact;
+        $contact_db->owner = \Auth::user()->id;
+        $contact_db->name = $name;
+        $contact_db->mobile = $mobile;
+        $contact_db->save();
+
+        return redirect('/contacts');
     }
 
     /**
