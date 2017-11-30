@@ -70,14 +70,14 @@
                                       <div class="form-group">
                                         <label for="link" class="col-sm-2 control-label"><i class="fa fa-user fa-lg" aria-hidden="true"></i></label>
                                         <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="name" id ="name" placeholder="Contact Name">
+                                          <input type="text" class="form-control" name="name" id ="name" value="{{ $contact->name }}">
                                         </div>
                                       </div>
 
                                       <div class="form-group">
                                         <label for="recipient" class="col-sm-2 control-label"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i></label>
                                         <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile Number">
+                                          <input type="text" class="form-control" name="mobile" id="mobile" value="{{ $contact->mobile }}">
                                         </div>
                                       </div>
 

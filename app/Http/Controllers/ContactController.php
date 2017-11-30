@@ -142,16 +142,7 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $name = Input::get('name');
-        $mobile = Input::get('mobile');
-
-        $contact_db = \App\Contact::where('id', $id);
-        $contact_db->owner = \Auth::user()->id;
-        $contact_db->name = $name;
-        $contact_db->mobile = $mobile;
-        $contact_db->save();
-
-        return redirect('/contacts');
+        //
     }
 
     /**
