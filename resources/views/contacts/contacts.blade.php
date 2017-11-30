@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="modal-body">
                                       <div class="form-group">
-                                        <p class="text-center">Are you sure you want to delete the contact: {{ $contact->name }}</p>
+                                        <p class="text-center">Are you sure you want to delete the contact: {{ $contact->name }}?</p>
                                       </div>
 
                                       <div class="modal-footer">

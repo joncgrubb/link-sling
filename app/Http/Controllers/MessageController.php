@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Twilio;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class MessageController extends Controller
 {
@@ -132,6 +133,8 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $test = DB::table('messages')->where('id', $id);
+        return 'TEST';
+        // return redirect('/contacts');
     }
 }
