@@ -40,6 +40,25 @@ class ContactController extends Controller
     }
 
     /**
+     * Update the selected Contact in storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editContact(Request $request, $id)
+    {
+        $name = Input::get('name');
+        $mobile = Input::get('mobile');
+
+        $contact_db = \Auth::user()->contacts()->where('id', $id)->first();
+        $contact_db->owner = \Auth::user()->id;
+        $contact_db->name = $name;
+        $contact_db->mobile = $mobile;
+        $contact_db->save();
+
+        return redirect('/contacts');
+    }
+
+    /**
      * Get matching contacts for Axios.
      *
      * @return \Illuminate\Http\Response
@@ -115,7 +134,7 @@ class ContactController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the selected Contact in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -123,7 +142,16 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $name = Input::get('name');
+        $mobile = Input::get('mobile');
+
+        $contact_db = \App\Contact::where('id', $id);
+        $contact_db->owner = \Auth::user()->id;
+        $contact_db->name = $name;
+        $contact_db->mobile = $mobile;
+        $contact_db->save();
+
+        return redirect('/contacts');
     }
 
     /**

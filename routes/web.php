@@ -25,6 +25,8 @@ Route::resource('/message', 'MessageController');
 
 Route::get('/contacts', 'ContactController@contacts');
 
+Route::post('/contacts/{id}', 'ContactController@editContact');
+
 Route::resource('/contact', 'ContactController');
 
 Route::match(array('GET', 'POST'), '/incoming', function()

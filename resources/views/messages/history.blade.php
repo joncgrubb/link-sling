@@ -40,8 +40,8 @@
                                         <div class="modal-body">
                                             <p>{{ $message->link }}</p>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <div class="modal-footer sling-nav">
+                                            <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
                                 </div>

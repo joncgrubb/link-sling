@@ -30,13 +30,16 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         <div class="avatar-circle-lg">
                                             <span class="initials-lg">
                                                 {{ str_limit($contact->name, $limit = 1, $end = '') }}
                                             </span>
                                         </div>
                                         <h4 class="modal-title">{{ $contact->name }}</h4>
+                                        <span class="modal-edits">    
+                                            <a href="#editContactModal{{ $contact->id }}" data-toggle="modal"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                                            <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                                        </span>
                                     </div>
                                     <div class="modal-body">
                                         <p>Contact Details</p>
@@ -44,13 +47,53 @@
                                             <i class="fa fa-mobile fa-2x" aria-hidden="true"></i> <span class="mobile-num-modal">{{ $contact->mobile }}</span>
                                         </p>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <div class="modal-footer sling-nav">
+                                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                    </div>
+
+                    <div id="editContactModal{{ $contact->id }}" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Edit Contact</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal" method="POST" action="/contacts/{{ $contact->id }}" role="form">
+
+                                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                      <div class="form-group">
+                                        <label for="link" class="col-sm-2 control-label"><i class="fa fa-user fa-lg" aria-hidden="true"></i></label>
+                                        <div class="col-sm-10">
+                                          <input type="text" class="form-control" name="name" id ="name" placeholder="Contact Name">
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="recipient" class="col-sm-2 control-label"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i></label>
+                                        <div class="col-sm-10">
+                                          <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile Number">
+                                        </div>
+                                      </div>
+
+                                      <div class="modal-footer">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 text-center sling-nav">
+                                              <button type="submit" class="btn btn-xs btn-default">Save</button>
+                                              <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                      </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     @endforeach
                     
@@ -65,7 +108,6 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title">Create Contact</h4>
                         </div>
                         <div class="modal-body">
