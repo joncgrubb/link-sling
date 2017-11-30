@@ -85,7 +85,7 @@
                                       <div class="modal-footer">
                                         <div class="form-group">
                                             <div class="col-sm-12 text-center sling-nav">
-                                              <button type="submit" class="btn btn-xs btn-default" data-dismiss="modal" data-toggle="modal" data-target="#contactModal{{ $contact->id }}">Save</button>
+                                              <button type="submit" class="btn btn-xs btn-default">Save</button>
                                               <button type="button" class="btn btn-xs btn-default" data-dismiss="modal" data-toggle="modal" data-target="#contactModal{{ $contact->id }}">Close</button>
                                             </div>
                                         </div>
