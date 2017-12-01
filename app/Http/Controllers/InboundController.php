@@ -32,15 +32,15 @@ class InboundController extends Controller
     {
     		$number = $_GET['From'];
 				$body = $_GET['Body'];
+				$sender_is_contact = false;
+
+				// Check if incoming SMS is from a stored contact
 				if (\App\Contact::where('mobile', str_replace('+1', '', $number))->count() > 0) {
-					$mobile_test = \App\Contact::where('mobile', str_replace('+1', '', $number))->first()->mobile;
-				}
-				else {
-					$mobile_test = false;
+					$sender_is_contact = true;
 				}
 
 				// Handle unknown users texting the Link-Sling number
-				if ($mobile_test == false) {
+				if ($sender_is_contact == false) {
 					$twiml = new Twilio\Twiml();
 					$twiml->message()->body('Please visit www.link-sling.com to set up your account.');
 					// $twiml->redirect('https://demo.twilio.com/sms/welcome');
