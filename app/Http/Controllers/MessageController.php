@@ -37,12 +37,8 @@ class MessageController extends Controller
      */
     public function history()
     {
-        // $number = '+16067763286';
-        // $test = \App\Contact::where('mobile', str_replace('+1', '', $number))->count();
-        // return $test;
-
         $messages = \Auth::user()->sent()->orderBy('id', 'desc')->get();
-        $contacts = \Auth::user()->contacts()->get();
+        $contacts = \Auth::user()->historyContacts()->get();
 
         return view('messages.history', compact('messages', 'contacts'));
     }

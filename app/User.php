@@ -40,4 +40,9 @@ class User extends Authenticatable
                 ->where('is_deleted', '=', false);
     }
 
+    public function historyContacts() {
+        return $this
+                ->hasMany('App\Contact', 'owner');
+    }
+
 }
