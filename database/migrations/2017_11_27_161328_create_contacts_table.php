@@ -19,6 +19,8 @@ class CreateContactsTable extends Migration
             $table->foreign('owner')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
             $table->bigInteger('mobile');
+            $table->boolean('authorized')->default('false');
+            $table->boolean('is_deleted')->default('false');
             $table->timestamps();
         });
     }
