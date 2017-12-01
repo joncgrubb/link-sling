@@ -100,12 +100,22 @@ class ContactController extends Controller
     {
         $name = Input::get('name');
         $mobile = Input::get('mobile');
+        $name_test = \App\Contact::where('name', $name)->first()->name;
+        $mobile_test = \App\Contact::where('mobile', $mobile)->first()->mobile;
 
-        $contact_db = new \App\Contact;
-        $contact_db->owner = \Auth::user()->id;
-        $contact_db->name = $name;
-        $contact_db->mobile = $mobile;
-        $contact_db->save();
+        if ($name == $name_test && $mobile == $mobile_test) {
+            $contact = \App\Contact::where('name', $name)->first();
+            $contact->is_deleted = false;
+            $contact->save();
+        }
+
+        else {
+            $contact_db = new \App\Contact;
+            $contact_db->owner = \Auth::user()->id;
+            $contact_db->name = $name;
+            $contact_db->mobile = $mobile;
+            $contact_db->save();
+        }
 
         return redirect('/contacts');
     }
