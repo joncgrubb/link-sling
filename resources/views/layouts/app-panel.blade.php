@@ -57,7 +57,6 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav sling-nav">
-                        {{-- <li><a href=""><button class="btn btn-default btn-sm">Contacts</button></a></li> --}}
                         @if (\Request::is('contacts'))
                             <li><a href="{{ url('/contacts') }}"><button class="btn btn-default btn-sm active">Contacts</button></a></li>
                         @else
@@ -68,7 +67,6 @@
                         @else
                             <li><a href="{{ url('/history') }}"><button class="btn btn-default btn-sm">History</button></a></li>
                         @endif
-                        {{-- <li><a href="{{ url('/history') }}"><button class="btn btn-default btn-sm">History</button></a></li> --}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->

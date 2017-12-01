@@ -66,30 +66,30 @@
                                 <div class="modal-body">
                                     <form class="form-horizontal" method="POST" action="/contacts/{{ $contact->id }}" role="form">
 
-                                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                      <div class="form-group">
+                                    <div class="form-group">
                                         <label for="link" class="col-sm-2 control-label"><i class="fa fa-user fa-lg" aria-hidden="true"></i></label>
                                         <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="name" id ="name" value="{{ $contact->name }}">
+                                            <input type="text" class="form-control" name="name" id ="name" value="{{ $contact->name }}">
                                         </div>
-                                      </div>
+                                    </div>
 
-                                      <div class="form-group">
+                                    <div class="form-group">
                                         <label for="recipient" class="col-sm-2 control-label"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i></label>
                                         <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="mobile" id="mobile" value="{{ $contact->mobile }}">
+                                            <input type="text" class="form-control" name="mobile" id="mobile" value="{{ $contact->mobile }}">
                                         </div>
-                                      </div>
+                                    </div>
 
-                                      <div class="modal-footer">
+                                    <div class="modal-footer">
                                         <div class="form-group">
                                             <div class="col-sm-12 text-center sling-nav">
-                                              <button type="submit" class="btn btn-xs btn-default">Save</button>
-                                              <button type="button" class="btn btn-xs btn-default" data-dismiss="modal" data-toggle="modal" data-target="#contactModal{{ $contact->id }}">Close</button>
+                                                <button type="submit" class="btn btn-xs btn-default">Save</button>
+                                                <button type="button" class="btn btn-xs btn-default" data-dismiss="modal" data-toggle="modal" data-target="#contactModal{{ $contact->id }}">Close</button>
                                             </div>
                                         </div>
-                                      </div>
+                                    </div>
 
                                     </form>
                                 </div>
@@ -142,30 +142,30 @@
                         <div class="modal-body">
                             <form class="form-horizontal" method="POST" action="/contact" role="form">
 
-                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                              <div class="form-group">
-                                <label for="link" class="col-sm-2 control-label"><i class="fa fa-user fa-lg" aria-hidden="true"></i></label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="name" id ="name" placeholder="Contact Name">
-                                </div>
-                              </div>
-
-                              <div class="form-group">
-                                <label for="recipient" class="col-sm-2 control-label"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i></label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile Number">
-                                </div>
-                              </div>
-
-                              <div class="modal-footer">
                                 <div class="form-group">
-                                    <div class="col-sm-12 text-center sling-nav">  
-                                      <button type="submit" class="btn btn-xs btn-default">Save</button>
-                                      <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
+                                    <label for="link" class="col-sm-2 control-label"><i class="fa fa-user fa-lg" aria-hidden="true"></i></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="name" id ="name" placeholder="Contact Name">
                                     </div>
                                 </div>
-                              </div>
+
+                                <div class="form-group">
+                                    <label for="recipient" class="col-sm-2 control-label"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile Number">
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <div class="form-group">
+                                        <div class="col-sm-12 text-center sling-nav">  
+                                            <button type="submit" class="btn btn-xs btn-default">Save</button>
+                                            <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </form>
                         </div>

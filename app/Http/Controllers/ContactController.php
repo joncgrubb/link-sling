@@ -37,6 +37,7 @@ class ContactController extends Controller
     public function contacts()
     {
         $contacts = \Auth::user()->contacts()->orderBy('name', 'asc')->get();
+
         return view('contacts.contacts', compact('contacts'));
     }
 
@@ -67,7 +68,6 @@ class ContactController extends Controller
     public function axiosGetContacts(Request $request)
     {
         $query = Input::get('query');
-
         $users = \Auth::user()->contacts()->where('name','like','%'. $query .'%')->pluck('name');
         $contacts = [];
         for ($i = 0; $i < sizeof($users); $i++) {
@@ -76,10 +76,8 @@ class ContactController extends Controller
             );
         }
         $test = $contacts;
-        // $test = [['name' => 'Amanda'], ['name' => 'Mom'], ['name' => 'Jonathan']];
 
         return response()->json($test);
-        // return response($test);
     }
 
     /**
@@ -154,12 +152,10 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        // DB::table('contacts')->where('id', $id)->delete();
-        // return redirect('/contacts');
-
         $contact = \App\Contact::find($id);
         $contact->is_deleted = true;
         $contact->save();
+        
         return redirect('/contacts');
     }
 }

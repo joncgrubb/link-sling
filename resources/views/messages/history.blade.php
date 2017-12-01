@@ -12,17 +12,17 @@
 
                   <table class="table history-table">
                     <thead>
-                      <tr>
-                        <th>Recipient</th>
-                        <th>Link</th>
-                        <th>Date</th>
-                        <th>Received</th>
-                      </tr>
+                        <tr>
+                            <th>Recipient</th>
+                            <th>Link</th>
+                            <th>Date</th>
+                            <th>Received</th>
+                        </tr>
                     </thead>
                     <tbody>
 
                     @foreach ($messages as $message)
-                      <tr>
+                    <tr>
                         <td>{{ $contacts->where('mobile', $message->mobile)->pluck('name')->first() }}</td>
                         <td>
                             <a href="#historyModal{{ $message->id }}" data-toggle="modal">
@@ -51,7 +51,7 @@
                         <td>{{ $message->dateFormat() }}</td>
                         <td class="text-center"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i>
                         </td>
-                      </tr>
+                    </tr>
 
                     @endforeach
 
