@@ -30,16 +30,16 @@ class InboundController extends Controller
      */
     public function inboundSMS()
     {
-    		$number = $_GET['From'];
-				$body = $_GET['Body'];
+    		$number = str_replace('+1', '', $_GET['From']);
+				$body = strtoupper($_GET['Body']);
 				$sender_is_contact = false;
 
 				// Check if incoming SMS is from a stored contact
-				if (\App\Contact::where('mobile', str_replace('+1', '', $number))->count() > 0) {
+				if (\App\Contact::where('mobile', $number)->count() > 0) {
 					$sender_is_contact = true;
 				}
 
-				// Handle unknown users texting the Link-Sling number
+				// Reply to inbound SMS from unknown user
 				if ($sender_is_contact == false) {
 					$twiml = new Twilio\Twiml();
 					$twiml->message()->body('Please visit www.link-sling.com to set up your account.');
@@ -50,8 +50,42 @@ class InboundController extends Controller
 					return $response;
 				}
 
+				// Reply to inbound SMS from a stored contact
+				if ($sender_is_contact == true) {
+					
+					// Authenticate contacts who accept agreement to receive messages
+					if ($body == 'YES') {
+						$contact = \App\Contact::where('mobile', $number)->first();
+						$contact->authorized = 1;
+						$contact->save();
+					}
+					else if ($body == 'NO') {
+						$contact = \App\Contact::where('mobile', $number)->first();
+						$contact->authorized = 2;
+						$contact->save();
+					}
+					else if (\App\Contact::where('mobile', $number)->first()->authorized == 0) {
+						$twiml = new Twilio\Twiml();
+						$twiml->message()->body("Invalid Response. Please reply with 'Yes' or 'No'");
+						// $twiml->redirect('https://demo.twilio.com/sms/welcome');
+						$response = Response::make($twiml, 200);
+						$response->header('Content-Type', 'text/xml');
+
+						return $response;
+					}
+					else {
+						$twiml = new Twilio\Twiml();
+						$twiml->message()->body("Response Error 001");
+						// $twiml->redirect('https://demo.twilio.com/sms/welcome');
+						$response = Response::make($twiml, 200);
+						$response->header('Content-Type', 'text/xml');
+
+						return $response;
+					}
+				}
+
     		$twiml = new Twilio\Twiml();
-				$twiml->message()->body('This is a reply from Link-Sling!');
+				$twiml->message()->body('Response Error 002');
 				// $twiml->redirect('https://demo.twilio.com/sms/welcome');
 				$response = Response::make($twiml, 200);
 				$response->header('Content-Type', 'text/xml');
