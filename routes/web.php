@@ -27,15 +27,20 @@ Route::get('/contacts', 'ContactController@contacts');
 
 Route::post('/contacts/{id}', 'ContactController@editContact');
 
+Route::get('/search', 'ContactController@axiosGetContacts');
+
 Route::resource('/contact', 'ContactController');
 
-Route::match(array('GET', 'POST'), '/incoming', function()
-{
-  $twiml = new Twilio\Twiml();
-  $twiml->say('Greetings from Link Sling. To begin using our service simply create an account on link sling dot com. Thank you.', array('voice' => 'alice'));
-  $response = Response::make($twiml, 200);
-  $response->header('Content-Type', 'text/xml');
-  return $response;
-});
+Route::match(array('GET', 'POST'), '/inboundCALL', 'InboundController@inboundCALL');
 
-Route::get('/search', 'ContactController@axiosGetContacts');
+Route::match(array('GET', 'POST'), '/inboundSMS', 'InboundController@inboundSMS');
+
+// Route::match(array('GET', 'POST'), '/incoming', function()
+// {
+//   $twiml = new Twilio\Twiml();
+//   $twiml->say('Greetings from Link Sling. To begin using our service simply create an account on link sling dot com. Thank you.', array('voice' => 'alice'));
+//   $response = Response::make($twiml, 200);
+//   $response->header('Content-Type', 'text/xml');
+//   return $response;
+// });
+

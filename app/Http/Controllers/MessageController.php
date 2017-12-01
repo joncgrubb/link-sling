@@ -61,8 +61,6 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        // Get form inputs
-        // $number = Input::get('recipient');  <-Old input
         $contact = Input::get('recipient');
         $number = \Auth::user()->contacts()->where('name', $contact)->first()->mobile;
         $link = Input::get('link');
@@ -87,7 +85,6 @@ class MessageController extends Controller
         $msg_db->sent_at = Carbon::now();
         $msg_db->save();
 
-        // print $message->sid;
         return redirect('/home');
     }
 
