@@ -35,12 +35,3 @@ Route::match(array('GET', 'POST'), '/inboundCALL', 'InboundController@inboundCAL
 
 Route::match(array('GET', 'POST'), '/inboundSMS', 'InboundController@inboundSMS');
 
-// Route::match(array('GET', 'POST'), '/incoming', function()
-// {
-//   $twiml = new Twilio\Twiml();
-//   $twiml->say('Greetings from Link Sling. To begin using our service simply create an account on link sling dot com. Thank you.', array('voice' => 'alice'));
-//   $response = Response::make($twiml, 200);
-//   $response->header('Content-Type', 'text/xml');
-//   return $response;
-// });
-

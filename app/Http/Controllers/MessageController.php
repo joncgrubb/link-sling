@@ -65,7 +65,6 @@ class MessageController extends Controller
         $number = \Auth::user()->contacts()->where('name', $contact)->first()->mobile;
         $link = Input::get('link');
 
-        // Create an authenticated client for the Twilio API
         // $client = new Twilio\Rest\Client($_ENV['TWILIO_ACCOUNT_SID'], $_ENV['TWILIO_AUTH_TOKEN']);
         $client = new Twilio\Rest\Client(env('TWILIO_ACCOUNT_SID'), env('TWILIO_AUTH_TOKEN'));
 
