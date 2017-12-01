@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'mobile', 'email', 'password',
     ];
 
     /**
@@ -36,7 +36,8 @@ class User extends Authenticatable
 
     public function contacts() {
         return $this
-                ->hasMany('App\Contact', 'owner');
+                ->hasMany('App\Contact', 'owner')
+                ->where('is_deleted', '=', false);
     }
 
 }

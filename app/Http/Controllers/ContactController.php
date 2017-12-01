@@ -154,7 +154,12 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('contacts')->where('id', $id)->delete();
+        // DB::table('contacts')->where('id', $id)->delete();
+        // return redirect('/contacts');
+
+        $contact = \App\Contact::find($id);
+        $contact->is_deleted = true;
+        $contact->save();
         return redirect('/contacts');
     }
 }

@@ -205,19 +205,6 @@ body {
 	cursor: pointer;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-body {
-overflow-y: scroll;
-}
-body.modal-open {
-overflow-y: scroll;
-margin-right: -15px !important;
-}
-.modal {
-overflow: auto;
-}
-}
-
 .button-form {
 	display: inline;
 }
@@ -230,3 +217,13 @@ i:focus {
   outline: none;
 }
 
+.modal
+{
+    overflow-y: auto !important;
+}
+
+.modal-open {
+    overflow: auto !important;
+    overflow-x: hidden !important;
+    padding-right: 0px !important;
+}
