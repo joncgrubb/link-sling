@@ -59,14 +59,29 @@ class InboundController extends Controller
 						$contact->authorized = 1;
 						$contact->save();
 					}
+
+					// Set authorization to opt out for contact that declines messages
 					else if ($body == 'NO') {
 						$contact = \App\Contact::where('mobile', $number)->first();
 						$contact->authorized = 2;
 						$contact->save();
 					}
+
+					// Reply to default sender that sent invalid response
 					else if (\App\Contact::where('mobile', $number)->first()->authorized == 0) {
 						$twiml = new Twilio\Twiml();
 						$twiml->message()->body("Invalid Response. Please reply with 'Yes' or 'No'");
+						// $twiml->redirect('https://demo.twilio.com/sms/welcome');
+						$response = Response::make($twiml, 200);
+						$response->header('Content-Type', 'text/xml');
+
+						return $response;
+					}
+
+					// Reply to authorized sender sending anything other than YES or NO
+					else if (\App\Contact::where('mobile', $number)->first()->authorized == 0) {
+						$twiml = new Twilio\Twiml();
+						$twiml->message()->body("We do not accept incoming messages. Please visit www.link-sling.com to send your links via Link-Sling. Thank you!");
 						// $twiml->redirect('https://demo.twilio.com/sms/welcome');
 						$response = Response::make($twiml, 200);
 						$response->header('Content-Type', 'text/xml');
@@ -84,12 +99,12 @@ class InboundController extends Controller
 					}
 				}
 
-    		$twiml = new Twilio\Twiml();
-				$twiml->message()->body('Response Error 002');
-				// $twiml->redirect('https://demo.twilio.com/sms/welcome');
-				$response = Response::make($twiml, 200);
-				$response->header('Content-Type', 'text/xml');
+    // 		$twiml = new Twilio\Twiml();
+				// $twiml->message()->body('Response Error 002');
+				// // $twiml->redirect('https://demo.twilio.com/sms/welcome');
+				// $response = Response::make($twiml, 200);
+				// $response->header('Content-Type', 'text/xml');
 
-				return $response;
+				// return $response;
     }
 }
