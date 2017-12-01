@@ -31,7 +31,7 @@ class InboundController extends Controller
     public function inboundSMS()
     {
     		$number = str_replace('+1', '', $_GET['From']);
-				$body = strtoupper($_GET['Body']);
+				$body = strtoupper(str_replace("'", '', $_GET['Body']));
 				$sender_is_contact = false;
 
 				// Check if incoming SMS is from a stored contact
@@ -76,7 +76,7 @@ class InboundController extends Controller
 					// Reply to default sender that sent invalid response
 					else if (\App\Contact::where('mobile', $number)->first()->authorized == 0) {
 						$twiml = new Twilio\Twiml();
-						$twiml->message()->body("Invalid Response. Please reply with 'Yes' or 'No'");
+						$twiml->message()->body("www.link-sling.com has detected an invalid Response. Please reply with 'Yes' or 'No'");
 						$response = Response::make($twiml, 200);
 						$response->header('Content-Type', 'text/xml');
 
