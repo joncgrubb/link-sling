@@ -133,8 +133,9 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        // $test = DB::table('messages')->where('id', $id);
-        return 'TEST';
-        // return redirect('/contacts');
+        $message = \App\Message::find($id);
+        $message->is_deleted = true;
+        $message->save();
+        return redirect('/history');
     }
 }

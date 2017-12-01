@@ -53,39 +53,45 @@
                         </td>
                       </tr>
 
-                      <div id="deleteMessageModal{{ $message->id }}" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Confirm Delete Message</h4>
-                                </div>
-                                <div class="modal-body">
-                                      <div class="form-group">
-                                        <p class="text-center">Are you sure you want to delete this message?</p>
-                                      </div>
-
-                                      <div class="modal-footer">
-                                        <div class="form-group">
-                                            <div class="col-sm-12 text-center sling-nav">
-                                                <form class="button-form" method="POST" action="/message/{{ $message->id }}">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}
-                                                    <button class="btn btn-xs btn-default">Delete</button>
-                                                </form>
-                                                <button type="button" class="btn btn-xs btn-default" data-dismiss="modal" data-toggle="modal" data-target="#historyModal{{ $message->id }}">Close</button>
-                                            </div>
-                                        </div>
-                                      </div>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
                     @endforeach
 
                   </table>
                     
                 </div>
             </div>
+
+            @foreach ($messages as $message)
+
+                <div id="deleteMessageModal{{ $message->id }}" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Confirm Delete Message</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <p class="text-center">Are you sure you want to delete this message?</p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <div class="form-group">
+                                        <div class="col-sm-12 text-center sling-nav">
+                                            <form class="button-form" method="POST" action="/message/{{ $message->id }}">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-xs btn-default">Delete</button>
+                                            </form>
+                                            <button type="button" class="btn btn-xs btn-default" data-dismiss="modal" data-toggle="modal" data-target="#historyModal{{ $message->id }}">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            @endforeach
+
         </div>
     </div>
 </div>
