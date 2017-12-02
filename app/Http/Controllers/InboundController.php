@@ -54,13 +54,16 @@ class InboundController extends Controller
 				if ($sender_is_contact == true) {
 					
 					// Authenticate contacts who accept agreement to receive messages
-					if ($body == 'YES' && \App\Contact::where('mobile', $number)->first()->authorized == 0) {
-						$contact = \App\Contact::where('mobile', $number)->first();
-						$contact->authorized = 1;
-						$contact->save();
+					if ($body == 'YES' && \App\Contact::where('mobile', $number)->first()->authorized == (0 || 2)) {
+						foreach (\App\Contact::where('mobile', $number)->get() as $do) {
+							$contact = \App\Contact::where('mobile', $number)->first();
+							$contact->authorized = 1;
+							$contact->save();
+						}
 
 						$twiml = new Twilio\Twiml();
 						$twiml->message()->body("You have aggreed to receive messages from www.link-sling.com");
+						// $twiml->message()->redirect();
 						$response = Response::make($twiml, 200);
 						$response->header('Content-Type', 'text/xml');
 
@@ -69,9 +72,11 @@ class InboundController extends Controller
 
 					// Set authorization to opt out for contact that declines messages
 					else if ($body == 'NO') {
-						$contact = \App\Contact::where('mobile', $number)->first();
-						$contact->authorized = 2;
-						$contact->save();
+						foreach (\App\Contact::where('mobile', $number)->get() as $do) {
+							$contact = \App\Contact::where('mobile', $number)->first();
+							$contact->authorized = 2;
+							$contact->save();
+						}
 
 						$twiml = new Twilio\Twiml();
 						$twiml->message()->body("You have opted out of receiving messages from Link-Sling. It may take some time before you stop receiving ALL messages. To opt back in, you may reply with 'Yes' at any time.");
