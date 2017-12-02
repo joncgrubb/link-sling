@@ -62,9 +62,9 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $contactInput = Input::get('recipient');
-        $number = \Auth::user()->contacts()->where('name', $contactInput)->first()->mobile;
+        $number = \Auth::user()->contacts()->where('name', $contactInput)->where('owner', \Auth::user()->id)->first()->mobile;
         $link = Input::get('link');
-        $contact = \Auth::user()->contacts()->where('name', $contactInput)->first();
+        $contact = \Auth::user()->contacts()->where('name', $contactInput)->where('owner', \Auth::user()->id)->first();
 
         // Send authorization message to new contacts first
         if ($contact->authorized == 0) {
@@ -74,9 +74,41 @@ class MessageController extends Controller
                 $number, // Text this number
                 array(
                     'from' => env('TWILIO_NUMBER'), // From a valid Twilio number
-                    'body' => \Auth::user()->name . " wants to send you a link with www.link-sling.com | Reply to this message with 'Yes' to allow this user to send you links or 'No' to opt out of receiving links from this user."
+                    'body' => \Auth::user()->name . " wants to send you a link with www.link-sling.com | Reply to this message with 'Yes' to allow Link-Sling to send you links or 'No' to opt out of receiving links from us."
                 )
             );
+
+            $msg_db = new \App\Message;
+            $msg_db->twilio_SID = $message->sid;
+            $msg_db->sender_id = \Auth::user()->id;
+            $msg_db->mobile = $number;
+            $msg_db->link = $link;
+            $msg_db->sent_at = Carbon::now();
+            $msg_db->save();
+
+            return redirect('/home');
+        }
+
+        if ($contact->authorized == 1) {
+            $client = new Twilio\Rest\Client(env('TWILIO_ACCOUNT_SID'), env('TWILIO_AUTH_TOKEN'));
+
+            $message = $client->messages->create(
+                $number, // Text this number
+                array(
+                    'from' => env('TWILIO_NUMBER'), // From a valid Twilio number
+                    'body' => $link . " | Sent By Link-Sling User: " . \Auth::user()->name
+                )
+            );
+
+            $msg_db = new \App\Message;
+            $msg_db->twilio_SID = $message->sid;
+            $msg_db->sender_id = \Auth::user()->id;
+            $msg_db->mobile = $number;
+            $msg_db->link = $link;
+            $msg_db->sent_at = Carbon::now();
+            $msg_db->is_received = true;
+            $msg_db->save();
+
             return redirect('/home');
         }
 
@@ -101,6 +133,16 @@ class MessageController extends Controller
         // $msg_db->save();
 
         // return redirect('/home');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deliverSMS()
+    {
+        
     }
 
     /**

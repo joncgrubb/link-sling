@@ -54,20 +54,29 @@ class InboundController extends Controller
 				if ($sender_is_contact == true) {
 					
 					// Authenticate contacts who accept agreement to receive messages
-					if ($body == 'YES' && \App\Contact::where('mobile', $number)->first()->authorized == (0 || 2)) {
+					if ($body == 'YES' && ( \App\Contact::where('mobile', $number)->first()->authorized == 0 || 2) ) {
 						foreach (\App\Contact::where('mobile', $number)->get() as $do) {
 							$contact = \App\Contact::where('mobile', $number)->first();
 							$contact->authorized = 1;
 							$contact->save();
 						}
 
-						$twiml = new Twilio\Twiml();
-						$twiml->message()->body("You have aggreed to receive messages from www.link-sling.com");
-						// $twiml->message()->redirect();
-						$response = Response::make($twiml, 200);
-						$response->header('Content-Type', 'text/xml');
+						$messages = \App\Message::where('mobile', $number)->get();
 
-						return $response;
+						foreach ($messages as $message) {
+							$client = new Twilio\Rest\Client(env('TWILIO_ACCOUNT_SID'), env('TWILIO_AUTH_TOKEN'));
+
+							$message->is_received = true;
+							$message->save();
+
+	            $message = $client->messages->create(
+	                $number, // Text this number
+	                array(
+	                    'from' => env('TWILIO_NUMBER'), // From a valid Twilio number
+	                    'body' => $message->link . " | Sent By Link-Sling User: Jonathan Grubb"
+	                )
+	            );
+        		}
 					}
 
 					// Set authorization to opt out for contact that declines messages
