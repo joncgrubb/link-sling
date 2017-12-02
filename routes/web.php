@@ -35,3 +35,5 @@ Route::match(array('GET', 'POST'), '/inboundCALL', 'InboundController@inboundCAL
 
 Route::match(array('GET', 'POST'), '/inboundSMS', 'InboundController@inboundSMS');
 
+Route::resource('/inbound', 'InboundController');
+

@@ -102,20 +102,22 @@ class ContactController extends Controller
         $mobile = Input::get('mobile');
         $name_test = false;
         $mobile_test = false;
+
+        // return \App\Contact::where('name', $name)->where('owner', \Auth::user()->id)->first();
         
         // Set name_test variable after checking if exists in DB
-        if (\App\Contact::where('name', $name)->count() > 0) {
+        if (\App\Contact::where('name', $name)->where('owner', \Auth::user()->id)->count() > 0) {
             $name_test = true;
         }
 
         // Set mobile_test variable after checking if exists in DB 
-        if (\App\Contact::where('mobile', $mobile)->count() > 0) {
+        if (\App\Contact::where('mobile', $mobile)->where('owner', \Auth::user()->id)->count() > 0) {
             $mobile_test = true;
         }
 
         // If a contact exists and was soft deleted, undelete it
         if ($name_test && $mobile_test) {
-            $contact = \App\Contact::where('name', $name)->first();
+            $contact = \App\Contact::where('name', $name)->where('owner', \Auth::user()->id)->first();
             $contact->is_deleted = false;
             $contact->save();
         }
