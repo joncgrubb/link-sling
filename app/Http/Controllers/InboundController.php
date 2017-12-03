@@ -66,7 +66,7 @@ class InboundController extends Controller
 						foreach ($messages as $message) {
 							$client = new Twilio\Rest\Client(env('TWILIO_ACCOUNT_SID'), env('TWILIO_AUTH_TOKEN'));
 
-							$message->is_received = true;
+							$message->is_received = 1;
 							$message->save();
 
             	            $message = $client->messages->create(
@@ -81,6 +81,14 @@ class InboundController extends Controller
 
 					// Set authorization to opt out for contact that declines messages
 					else if ($body == 'NO') {
+                        if (\App\Contact::where('mobile', $number)->first()->authorized == 0) {
+                            $messages = \App\Message::where('mobile', $number)->get();
+
+                            foreach ($messages as $message) {
+                                $message->is_received = 2;
+                                $message->save();
+                            }
+                        }
 						foreach (\App\Contact::where('mobile', $number)->get() as $do) {
 							$contact = \App\Contact::where('mobile', $number)->first();
 							$contact->authorized = 2;

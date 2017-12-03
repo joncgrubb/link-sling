@@ -49,7 +49,20 @@
                             </div>
                         </td>
                         <td>{{ $message->dateFormat() }}</td>
-                        <td class="text-center"><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i>
+                        <td class="text-center">
+                            @if ($message->is_received == 1)
+                                <a href="#" data-toggle="tooltip" data-placement="auto" title="Link sent">
+                                    <i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i>
+                                </a>
+                            @elseif ($message->is_received == 0)
+                                <a href="#" data-toggle="tooltip" data-placement="auto" title="Waiting for contact authorization">
+                                    <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+                                </a>
+                            @elseif ($message->is_received == 2)
+                                <a href="#" data-toggle="tooltip" data-placement="auto" title="Contact declined receiving messages from Link-Sling">
+                                    <i class="fa fa-times-circle-o fa-lg" aria-hidden="true"></i>
+                                </a>
+                            @endif
                         </td>
                     </tr>
 

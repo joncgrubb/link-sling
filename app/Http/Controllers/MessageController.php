@@ -108,7 +108,7 @@ class MessageController extends Controller
             $msg_db->mobile = $number;
             $msg_db->link = $link;
             $msg_db->sent_at = Carbon::now();
-            $msg_db->is_received = true;
+            $msg_db->is_received = 1;
             $msg_db->save();
 
             return redirect('/home');

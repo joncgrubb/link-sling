@@ -22,7 +22,7 @@ class CreateMessagesTable extends Migration
             $table->bigInteger('mobile');
             $table->string('link', 250);
             $table->datetime('sent_at');
-            $table->boolean('is_received')->default(false);
+            $table->integer('is_received')->default(0);
             $table->boolean('is_deleted')->default(false);
             $table->timestamps();
         });

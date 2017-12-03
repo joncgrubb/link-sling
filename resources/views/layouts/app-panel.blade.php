@@ -115,5 +115,10 @@
     <script>
         $('.btn').mouseup(function() { this.blur() });
     </script>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip(); 
+    });
+    </script>
 </body>
 </html>
