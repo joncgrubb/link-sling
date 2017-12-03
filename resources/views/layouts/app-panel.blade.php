@@ -57,6 +57,11 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav sling-nav">
+                        @if (\Request::is('home'))
+                            <li><a href="{{ url('/home') }}"><button class="btn btn-default btn-sm active">Sling!</button></a></li>
+                        @else
+                            <li><a href="{{ url('/home') }}"><button class="btn btn-default btn-sm">Sling!</button></a></li>
+                        @endif
                         @if (\Request::is('contacts'))
                             <li><a href="{{ url('/contacts') }}"><button class="btn btn-default btn-sm active">Contacts</button></a></li>
                         @else

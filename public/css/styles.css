@@ -68,6 +68,7 @@ body {
 .sling-nav button {
 	border-color: #4CA6FF;
 	color: #4CA6FF;
+	margin-right: -10px;
 }
 
 .active {
