@@ -69,14 +69,14 @@ class InboundController extends Controller
 							$message->is_received = true;
 							$message->save();
 
-	            $message = $client->messages->create(
-	                $number, // Text this number
-	                array(
-	                    'from' => env('TWILIO_NUMBER'), // From a valid Twilio number
-	                    'body' => $message->link . " | Sent By Link-Sling User: Jonathan Grubb"
-	                )
-	            );
-        		}
+            	            $message = $client->messages->create(
+            	                $number, // Text this number
+            	                array(
+            	                    'from' => env('TWILIO_NUMBER'), // From a valid Twilio number
+            	                    'body' => $message->link . " | Sent By Link-Sling User: " . $message->sender_name
+            	                )
+            	            );
+        		        }
 					}
 
 					// Set authorization to opt out for contact that declines messages

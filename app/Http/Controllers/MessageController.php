@@ -81,6 +81,7 @@ class MessageController extends Controller
             $msg_db = new \App\Message;
             $msg_db->twilio_SID = $message->sid;
             $msg_db->sender_id = \Auth::user()->id;
+            $msg_db->sender_name = \Auth::user()->name;
             $msg_db->mobile = $number;
             $msg_db->link = $link;
             $msg_db->sent_at = Carbon::now();
@@ -103,6 +104,7 @@ class MessageController extends Controller
             $msg_db = new \App\Message;
             $msg_db->twilio_SID = $message->sid;
             $msg_db->sender_id = \Auth::user()->id;
+            $msg_db->sender_name = \Auth::user()->name;
             $msg_db->mobile = $number;
             $msg_db->link = $link;
             $msg_db->sent_at = Carbon::now();

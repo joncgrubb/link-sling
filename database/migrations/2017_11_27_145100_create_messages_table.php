@@ -18,6 +18,7 @@ class CreateMessagesTable extends Migration
             $table->char('twilio_SID', 34);
             $table->integer('sender_id')->unsigned();
             $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('sender_name')->references('name')->on('users');
             $table->bigInteger('mobile');
             $table->string('link', 250);
             $table->datetime('sent_at');
