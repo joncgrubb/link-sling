@@ -82,6 +82,7 @@
                                 </button>
                             </div>
                         </div>
+                        {!! app('captcha')->render($lang = null); !!}
                     </form>
                 </div>
             </div>

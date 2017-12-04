@@ -91,14 +91,15 @@
             </div>
         </nav>
 
-        @yield('content')
+        
+    </div>
+    @yield('content')
 
         <footer class="row" style="text-align: center;">
 
             @include('layouts.footer')
 
         </footer>
-    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

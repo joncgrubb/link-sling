@@ -22,5 +22,5 @@ SMS backed free website that will send weblinks/messages to numbers on all mobil
 
 * [ ] Serve adds that conform to the Acceptable Adds program and the EFF Do Not Track privacy standard.
 * [x] Message history will show whether message was received.
-* [ ] Authorization utilizes Captcha (give it half a day).
+* [x] Authorization utilizes Captcha (implemented invisible reCaptcha).
 * [ ] O-Auth (give it half a day).
