@@ -119,6 +119,21 @@ class MessageController extends Controller
             return redirect('/home');
         }
 
+        if ($contact->authorized == 2) {
+
+            $msg_db = new \App\Message;
+            $msg_db->twilio_SID = 0;
+            $msg_db->sender_id = \Auth::user()->id;
+            $msg_db->sender_name = \Auth::user()->name;
+            $msg_db->mobile = $number;
+            $msg_db->link = $link;
+            $msg_db->sent_at = Carbon::now();
+            $msg_db->is_received = 2;
+            $msg_db->save();
+
+            return redirect('/home');
+        }
+
         // $client = new Twilio\Rest\Client($_ENV['TWILIO_ACCOUNT_SID'], $_ENV['TWILIO_AUTH_TOKEN']);
 
         // $client = new Twilio\Rest\Client(env('TWILIO_ACCOUNT_SID'), env('TWILIO_AUTH_TOKEN'));
