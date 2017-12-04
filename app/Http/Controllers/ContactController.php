@@ -128,6 +128,7 @@ class ContactController extends Controller
         // If a contact exists and was soft deleted, undelete it
         if ($name_test && $mobile_test) {
             $contact = \App\Contact::where('name', $name)->where('owner', \Auth::user()->id)->first();
+            $contact->name = $name;
             $contact->is_deleted = false;
             $contact->save();
         }
