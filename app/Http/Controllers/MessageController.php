@@ -61,6 +61,11 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'link' => 'required|string|max:255',
+            'recipient' => 'required|string|exists:contacts,name',
+        ]);
+
         $contactInput = Input::get('recipient');
         $number = \Auth::user()->contacts()->where('name', $contactInput)->where('owner', \Auth::user()->id)->first()->mobile;
         $link = Input::get('link');

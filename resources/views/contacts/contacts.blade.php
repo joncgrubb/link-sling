@@ -68,17 +68,29 @@
 
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                    <div class="form-group">
+                                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                         <label for="link" class="col-sm-2 control-label"><i class="fa fa-user fa-lg" aria-hidden="true"></i></label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="name" id ="name" value="{{ $contact->name }}">
+                                            <input type="text" class="form-control" name="name" id ="name" value="{{ $contact->name }}" required="true" oninvalid="this.setCustomValidity('Contact name must not be blank')"
+                                                oninput="setCustomValidity('')">
+                                            @if ($errors->has('name'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
                                         <label for="recipient" class="col-sm-2 control-label"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i></label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="mobile" id="mobile" value="{{ $contact->mobile }}">
+                                            <input type="text" class="form-control" name="mobile" id="mobile" value="{{ $contact->mobile }}" required="true" oninvalid="this.setCustomValidity('Contact mobile number must not be blank')"
+                                            oninput="setCustomValidity('')">
+                                            @if ($errors->has('mobile'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('mobile') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -144,24 +156,36 @@
 
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                <div class="form-group">
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                     <label for="link" class="col-sm-2 control-label"><i class="fa fa-user fa-lg" aria-hidden="true"></i></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="name" id ="name" placeholder="Contact Name">
+                                        <input type="text" class="form-control" name="name" id ="name" placeholder="Contact Name" required="true" oninvalid="this.setCustomValidity('Contact name must not be blank')"
+                                            oninput="setCustomValidity('')">
+                                        @if ($errors->has('name'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
                                     <label for="recipient" class="col-sm-2 control-label"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile Number">
+                                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile Number" required="true" oninvalid="this.setCustomValidity('Contact mobile number must not be blank')"
+                                            oninput="setCustomValidity('')">
+                                        @if ($errors->has('mobile'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('mobile') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
 
                                 <div class="modal-footer">
                                     <div class="form-group">
                                         <div class="col-sm-12 text-center sling-nav">  
-                                            <button type="submit" class="btn btn-xs btn-default">Save</button>
+                                            <button type="submit" class="btn btn-xs btn-default submit">Save</button>
                                             <button type="button" class="btn btn-xs btn-default" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>

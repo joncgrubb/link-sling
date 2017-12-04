@@ -43210,6 +43210,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -43263,7 +43264,10 @@ var render = function() {
         autocomplete: "off",
         name: "recipient",
         id: "recipient",
-        placeholder: "Enter Contact name"
+        placeholder: "Enter Contact name",
+        required: "true",
+        oninvalid: "this.setCustomValidity('Please enter a valid Contact')",
+        oninput: "setCustomValidity('')"
       },
       domProps: { value: _vm.query },
       on: {

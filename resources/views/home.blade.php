@@ -18,17 +18,28 @@
 
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                      <div class="form-group">
+                      <div class="form-group{{ $errors->has('link') ? ' has-error' : '' }}">
                         <label for="link" class="col-sm-2 control-label">Link</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="link" id ="link" placeholder="Paste web link here...">
+                          <input type="text" class="form-control" name="link" id ="link" placeholder="Paste web link here..." required="true" oninvalid="this.setCustomValidity('Link field must not be blank')"
+                            oninput="setCustomValidity('')">
+                          @if ($errors->has('link'))
+                            <span class="help-block">
+                              <strong>{{ $errors->first('link') }}</strong>
+                            </span>
+                          @endif
                         </div>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group{{ $errors->has('recipient') ? ' has-error' : '' }}">
                         <label for="recipient" class="col-sm-2 control-label">Recipient</label>
                         <div class="col-sm-10">
                           <autocomplete></autocomplete>
+                          @if ($errors->has('recipient'))
+                            <span class="help-block">
+                              <strong>{{ $errors->first('recipient') }}</strong>
+                            </span>
+                          @endif
                         </div>
                       </div>
 

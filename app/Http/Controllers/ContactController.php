@@ -48,6 +48,11 @@ class ContactController extends Controller
      */
     public function editContact(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'mobile' => 'required|digits:10',
+        ]);
+
         $name = Input::get('name');
         $mobile = Input::get('mobile');
 
@@ -98,6 +103,11 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'mobile' => 'required|digits:10',
+        ]);
+
         $name = Input::get('name');
         $mobile = Input::get('mobile');
         $name_test = false;
