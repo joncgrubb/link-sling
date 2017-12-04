@@ -80,9 +80,8 @@ class ContactController extends Controller
                 ['name' => $users[$i]]
             );
         }
-        $test = $contacts;
 
-        return response()->json($test);
+        return response()->json($contacts);
     }
 
     /**
