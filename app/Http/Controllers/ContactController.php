@@ -134,11 +134,31 @@ class ContactController extends Controller
 
         // Create the new contact
         else {
-            $contact_db = new \App\Contact;
-            $contact_db->owner = \Auth::user()->id;
-            $contact_db->name = $name;
-            $contact_db->mobile = $mobile;
-            $contact_db->save();
+            $get_all_mobiles = \App\Contact::where('mobile', $mobile)->get();
+            $mobile_auth = false;
+            foreach ($get_all_mobiles as $single_mobile) {
+                if ($single_mobile->mobile == $mobile) {
+                    $mobile_auth = true;
+                    $repeat_auth = $single_mobile->authorized;
+                    break;
+                }
+            }
+
+            if($mobile_auth == false) {
+                $contact_db = new \App\Contact;
+                $contact_db->owner = \Auth::user()->id;
+                $contact_db->name = $name;
+                $contact_db->mobile = $mobile;
+                $contact_db->save();
+            }
+            else {
+                $contact_db = new \App\Contact;
+                $contact_db->owner = \Auth::user()->id;
+                $contact_db->name = $name;
+                $contact_db->mobile = $mobile;
+                $contact_db->authorized = $repeat_auth;
+                $contact_db->save();
+            }
         }
 
         return redirect('/contacts');
