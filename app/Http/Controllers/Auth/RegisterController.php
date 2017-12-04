@@ -49,7 +49,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'mobile' => 'required|digits:10|unique:users',
+            // 'mobile' => 'required|digits:10|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'g-recaptcha-response' => 'required|captcha',
@@ -66,9 +66,12 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'mobile' => $data['mobile'],
+            // 'mobile' => $data['mobile'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
 }
+
+
+// If you add 'mobile' back in, it needs to be set in User.php
