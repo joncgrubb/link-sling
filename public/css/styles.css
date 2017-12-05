@@ -286,6 +286,15 @@ i:focus {
 	padding: 15px;
 }
 
+.how-to-icon {
+	text-shadow: 1px 1px 5px #ccc;
+}
+
 .how-to-panel-text {
 	margin-top: 10px;
+}
+
+.how-does {
+	color: #4CA6FF;
+	text-shadow: 1px 1px 5px #ccc;
 }
