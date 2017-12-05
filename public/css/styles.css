@@ -29,6 +29,10 @@
 	text-shadow: 1px 1px 5px #A3A3A3;
 }
 
+.sling-panel {
+	margin-top: 50px;
+}
+
 .brand:hover {
 	color: #93C9FF;
 	text-shadow: 1px 1px 2px #777;
