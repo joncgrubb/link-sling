@@ -46,9 +46,8 @@
 }
 
 .sling-blurb {
-	text-align: center;
+
 	display: inline-block;
-	margin-top: 30px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 15px;
 }
@@ -289,6 +288,7 @@ i:focus {
 }
 
 .how-to-icon {
+	margin-top: 10px;
 	text-shadow: 1px 1px 5px #ccc;
 }
 
@@ -304,4 +304,14 @@ i:focus {
 .equal {  
     display: -webkit-flex;
     display: flex;
+}
+
+blockquote {
+  margin: 20px 0;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding-left: 1.5rem;
+  border-left: 10px solid #93C9FF;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #ccc;
 }
