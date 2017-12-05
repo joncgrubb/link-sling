@@ -86,6 +86,7 @@
                     </form>
                 </div>
             </div>
+            <div class="register-spacer"></div>
         </div>
     </div>
 </div>

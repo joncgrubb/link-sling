@@ -76,9 +76,9 @@ body {
   flex-direction: column;
 }
 
-#app {
+/*#app {
 	flex: 1;
-}
+}*/
 
 .panel {
 	border: 1px solid #ccc;
@@ -328,7 +328,7 @@ blockquote {
   box-shadow: 1px 1px 5px #ccc;
 }
 
-.sling-foot {
+/*.sling-foot {
 	background-color: #93C9FF;
 	box-shadow: 2px 0px 5px #777;
 	margin-top: 25px;
@@ -336,7 +336,7 @@ blockquote {
   bottom: 0;
   right: 0;
   left: 0;
-}
+}*/
 
 .sling-foot-welcome {
 	background-color: #93C9FF;
@@ -357,4 +357,9 @@ blockquote {
 .home-spacer {
 	display: block;
 	margin-top: 200px;
+}
+
+.register-spacer {
+	display: block;
+	margin-top: 100px;
 }
