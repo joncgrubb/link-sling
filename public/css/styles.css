@@ -285,6 +285,7 @@ i:focus {
 .how-to-panel {
 	padding: 15px;
 	height: 100%;
+	width: 100%;
 }
 
 .how-to-icon {
@@ -301,10 +302,10 @@ i:focus {
 	text-shadow: 1px 1px 5px #ccc;
 }
 
-.equal {  
+/*.equal {  
     display: -webkit-flex;
     display: flex;
-}
+}*/
 
 blockquote {
   margin: 20px 0;
