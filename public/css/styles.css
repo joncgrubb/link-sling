@@ -236,3 +236,9 @@ i:focus {
     overflow-x: hidden !important;
     padding-right: 0px !important;
 }
+
+.g-recaptcha {
+	height: 35%;
+	width: 36%;
+	margin: auto;
+}
