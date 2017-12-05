@@ -1,6 +1,19 @@
-<div id="copyright" style="display: inline-block; color: #ccc; bottom: 0; margin-top: 100px;">
-	© Copyright 2017 Link-Sling
-</div>
-<div class="text-center">
-	<img style="display: inline-block; height: 15%; width: 15%;" src="{{ asset('twilio.png') }}">
-</div>
+@if (\Request::is('/'))	
+	<div class="sling-foot-welcome">
+		<div id="copyright" style="display: inline-block; color: white; margin-top: 30px;">
+			© Copyright 2017 Link-Sling
+		</div>
+		<div class="text-center">
+			<a href="https://www.twilio.com/"><img style="display: inline-block; height: 10%; width: 10%; margin-top: 15px; margin-bottom: 20px; box-shadow: 1px 1px 5px black;" src="{{ asset('twilio-blue.png') }}"></a>
+		</div>
+	</div>
+@else
+	<div class="sling-foot">
+		<div id="copyright" style="display: inline-block; color: white; margin-top: 30px;">
+			© Copyright 2017 Link-Sling
+		</div>
+		<div class="text-center">
+			<a href="https://www.twilio.com/"><img style="display: inline-block; height: 10%; width: 10%; margin-top: 15px; margin-bottom: 20px; box-shadow: 1px 1px 5px black;" src="{{ asset('twilio-blue.png') }}"></a>
+		</div>
+	</div>
+@endif

@@ -317,3 +317,28 @@ blockquote {
   box-shadow: 1px 1px 5px #ccc;
 }
 
+.sling-foot {
+	background-color: #93C9FF;
+	box-shadow: 2px 0px 5px #777;
+	margin-top: 25px;
+	position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.sling-foot-welcome {
+	background-color: #93C9FF;
+	box-shadow: 2px 0px 5px #777;
+	margin-top: 25px;
+	position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.get-started {
+	box-shadow: 1px 1px 5px #ccc;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

@@ -29,6 +29,9 @@
       		<p class="how-to-panel-text">After accepting messages from us, your contacts receive the link via SMS!</p>
       	</div>
       </div>
+      <div class="col-sm-12 text-center sling-nav">
+        <a href="{{ url('/register') }}"><button class="btn btn-default get-started">Get Started!</button></a>
+      </div>
     </div>
 </div>
 @endsection
