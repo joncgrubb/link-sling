@@ -1,11 +1,12 @@
 #__bs_notify__ { top:95% !important; right: 10px !important; border-radius: 15px !important; height:60px !important; }
 
-@import url('https://fonts.googleapis.com/css?family=Lobster|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Open+Sans');
 
 /* 
 	FONTS:
 	font-family: 'Lobster', cursive;
 	font-family: 'Raleway', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 */
 
 /* 
@@ -13,9 +14,15 @@
 	Light Blue: #4CA6FF;
 */
 
+.sling-title-logo {
+	margin: auto;
+	height: 40%;
+	width: 40%;
+}
+
 .brand {
 	display: block;
-	font-family: 'Lobster', cursive;
+	font-family: 'Open Sans', sans-serif;
 	color: #4CA6FF;
 	font-size: 40px;
 	font-weight: bold;
@@ -29,19 +36,34 @@
 
 .sling-title {
 	text-align: center;
-	font-family: 'Lobster', cursive;
+	font-family: 'Open Sans', sans-serif;
 	color: #4CA6FF;
 	font-size: 80px;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	text-shadow: 1px 1px 5px #ccc;
+	display: inline-block;
+	margin-left: 10px;
 }
 
 .sling-blurb {
 	text-align: center;
 	display: inline-block;
-	margin-top: 50px;
+	margin-top: 30px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 15px;
+}
+
+.sling-blurb-title {
+	display: inline-block;
+}
+
+.sling-blurb-title-panel {
+	margin-top: 100px;
+	padding: 10px;
+	background-color:  #93C9FF !important;
+	color: white !important;
+	border-color: #4CA6FF !important;
+	box-shadow: 1px 1px 5px #ccc;
 }
 
 body {
@@ -86,7 +108,7 @@ body {
 
 .sling-main-panel {
 	text-align: center;
-	font-family: 'Lobster', cursive;
+	font-family: 'Open Sans', sans-serif;
 	color: #4CA6FF !important;
 	font-size: 20px;
 	text-shadow: 1px 1px 5px #ccc;
@@ -95,6 +117,19 @@ body {
 
 .modal-mobile {
 	display: block;
+}
+
+.link-title {
+	color: #4CA6FF;
+	display: inline-block;
+	text-shadow: 1px 1px 5px #ccc;
+	margin-right: 10px;
+	-moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
 }
 
 .fa-check-circle-o {
@@ -241,4 +276,16 @@ i:focus {
 	height: 35%;
 	width: 36%;
 	margin: auto;
+}
+
+.how-to {
+	margin-top: 25px;
+}
+
+.how-to-panel {
+	padding: 15px;
+}
+
+.how-to-panel-text {
+	margin-top: 10px;
 }
