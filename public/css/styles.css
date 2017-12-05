@@ -71,6 +71,13 @@
 
 body {
 	background-color: #F3F3F3;
+	display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#app {
+	flex: 1;
 }
 
 .panel {
@@ -345,4 +352,9 @@ blockquote {
 	box-shadow: 1px 1px 5px #ccc;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.home-spacer {
+	display: block;
+	margin-top: 200px;
 }
