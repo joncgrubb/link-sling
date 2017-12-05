@@ -9,8 +9,8 @@
             <h3 class="sling-blurb">Welcome to Link-Sling! We utilize the Twilio SMS service to make it easy for you, your friends, and colleagues to share web links and short messages to each other from PC, Mac or Linux to any phone. We don't require you to install any third party apps on your computer or recipient mobile device, making it as simple as creating an account and adding your contacts to start sharing!</h3>
         </div>
     </div>
-    <div class="row how-to">
-    	<h3 class="text-center how-does">How does it work?</h3>
+    <h3 class="text-center how-does">How does it work?</h3>
+    <div class="row how-to equal">
     	<div class="col-xs-4">
       	<div class="panel panel-default text-center how-to-panel">
       		<i class="fa fa-desktop fa-4x how-to-icon" aria-hidden="true"></i>

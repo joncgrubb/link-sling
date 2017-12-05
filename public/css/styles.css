@@ -284,6 +284,7 @@ i:focus {
 
 .how-to-panel {
 	padding: 15px;
+	height: 100%;
 }
 
 .how-to-icon {
@@ -297,4 +298,9 @@ i:focus {
 .how-does {
 	color: #4CA6FF;
 	text-shadow: 1px 1px 5px #ccc;
+}
+
+.equal {  
+    display: -webkit-flex;
+    display: flex;
 }
