@@ -1,5 +1,5 @@
 
-<img src="https://github.com/joncgrubb/link-sling/raw/master/docs/Link-Sling-Logo.png" width="50%" height="50%">
+<img src="https://github.com/joncgrubb/link-sling/raw/master/docs/Link-Sling-Logo.png" width="50%" height="50%" margin="auto">
 
 Link-Sling is an application that utilizes the Twilio API to send text messages and web links from browser to mobile.
 
@@ -18,6 +18,32 @@ Install dependencies:
 `npm install`
 
 `composer install`
+
+Set up your local PostgreSQL database. Head on over to [PostgreSQL](https://www.postgresql.org/) if you need help installing and setting it up.
+
+Start by creating a new database and user:
+
+`psql`
+
+`CREATE USER username WITH PASSWORD 'password';`
+
+`CREATE DATABSE dbname OWNER username;`
+
+`\quit`
+
+Create your local ENV file then copy/paste the contents of the supplied .env.example into it:
+
+`touch .env`
+
+Now you will need to set up a few free accounts with the services required for this app to work:
+
+[Twilio](https://www.twilio.com/)
+
+[Google reCaptcha](https://www.google.com/recaptcha/intro/)
+
+You will also need to download and unzip an awesome little tunneling tool, feel free to add a global alias to this guy:
+
+[ngrok](https://ngrok.com/download)
 
 
 
