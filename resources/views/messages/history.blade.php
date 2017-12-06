@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                         </td>
-                        <td>{{ $message->dateFormat() }}</td>
+                        <td>{{ $message->created_at->format('F d, Y') }}</td>
                         <td class="text-center">
                             @if ($message->is_received == 1)
                                 <a href="#" data-toggle="tooltip" data-placement="auto" title="Link sent">
