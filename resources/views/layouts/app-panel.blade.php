@@ -50,7 +50,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        <span class="brand">L</span>
+                        <div class="brand-circle"><span class="brand">L</span></div>
                     </a>
                 </div>
 
