@@ -9,11 +9,16 @@ Link-Sling utilizes the Laravel PHP framework and a PostgreSQL object-relational
 ## Usage
 
 First, clone this repo:
+
 `git clone https://github.com/joncgrubb/link-sling.git`
 
 Install dependencies:
+
 `npm install`
+
 `composer install`
+
+
 
 ---
 
