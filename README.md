@@ -1,6 +1,6 @@
 # Link-Sling
 
-![alt text](https://github.com/joncgrubb/link-sling/tree/master/docs/Link-Sling-Logo.png "Link-Sling")
+![alt text](https://github.com/joncgrubb/link-sling/raw/master/docs/Link-Sling-Logo.png "Link-Sling")
 
 Link-Sling is an application that utilizes the Twilio API to send text messages and web links from browser to mobile.
 
