@@ -20,7 +20,10 @@ SMS backed free website that will send weblinks/messages to numbers on all mobil
 
 ## Stretch Goals
 
-* [ ] Serve adds that conform to the Acceptable Adds program and the EFF Do Not Track privacy standard.
 * [x] Message history will show whether message was received.
 * [x] Authorization utilizes Captcha (implemented invisible reCaptcha).
-* [ ] O-Auth (give it half a day).
+
+## For later versions
+
+* [ ] Serve adds that conform to the Acceptable Adds program and the EFF Do Not Track privacy standard.
+* [ ] Allow users to registers with O-Auth2.
