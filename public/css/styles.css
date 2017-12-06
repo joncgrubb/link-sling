@@ -492,4 +492,8 @@ table td {
     .g-recaptcha {
 			margin: 0;
 		}
+
+		.text-navs {
+			margin-top: 0;
+		}
 }
