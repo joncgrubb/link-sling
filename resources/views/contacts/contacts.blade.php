@@ -26,7 +26,12 @@
                         </div>
                         <div class="col-xs-5 text-right contact-text">{{ $contact->mobileFormat($contact->mobile) }}</div>
                         
-                        <div id="contactModal{{ $contact->id }}" class="modal fade">
+                        <div id="contactModal{{ $contact->id }}" class="modal animated zoomIn" style="
+                        -webkit-animation-duration: .3s;
+                        -webkit-animation-delay: 0s;
+                        -moz-animation-duration: .3s;
+                        -moz-animation-delay: 0s;
+                        ">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -57,7 +62,12 @@
 
                     </div>
 
-                    <div id="editContactModal{{ $contact->id }}" class="modal fade">
+                    <div id="editContactModal{{ $contact->id }}" class="modal animated zoomIn" style="
+                        -webkit-animation-duration: .3s;
+                        -webkit-animation-delay: 0s;
+                        -moz-animation-duration: .3s;
+                        -moz-animation-delay: 0s;
+                        ">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -109,7 +119,12 @@
                         </div>
                     </div>
 
-                    <div id="deleteContactModal{{ $contact->id }}" class="modal fade">
+                    <div id="deleteContactModal{{ $contact->id }}" class="modal animated zoomIn" style="
+                        -webkit-animation-duration: .3s;
+                        -webkit-animation-delay: 0s;
+                        -moz-animation-duration: .3s;
+                        -moz-animation-delay: 0s;
+                        ">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -145,7 +160,12 @@
                 <button class="btn btn-default add-contact"><span class="add-contact-plus">+</span></button>
             </a>
 
-            <div id="addContactModal" class="modal fade">
+            <div id="addContactModal" class="modal animated zoomIn" style="
+                        -webkit-animation-duration: .3s;
+                        -webkit-animation-delay: 0s;
+                        -moz-animation-duration: .3s;
+                        -moz-animation-delay: 0s;
+                        ">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">

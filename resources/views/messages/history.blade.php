@@ -28,7 +28,12 @@
                             <a href="#historyModal{{ $message->id }}" data-toggle="modal">
                                 {{ str_limit($message->link, $limit = 25, $end = '...') }}
                             </a>
-                            <div id="historyModal{{ $message->id }}" class="modal fade">
+                            <div id="historyModal{{ $message->id }}" class="modal animated zoomIn" style="
+                        -webkit-animation-duration: .3s;
+                        -webkit-animation-delay: 0s;
+                        -moz-animation-duration: .3s;
+                        -moz-animation-delay: 0s;
+                        ">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -75,7 +80,12 @@
 
             @foreach ($messages as $message)
 
-                <div id="deleteMessageModal{{ $message->id }}" class="modal fade">
+                <div id="deleteMessageModal{{ $message->id }}" class="modal animated zoomIn" style="
+                        -webkit-animation-duration: .3s;
+                        -webkit-animation-delay: 0s;
+                        -moz-animation-duration: .3s;
+                        -moz-animation-delay: 0s;
+                        ">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
