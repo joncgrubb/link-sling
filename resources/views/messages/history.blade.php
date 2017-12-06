@@ -11,14 +11,14 @@
                 <div class="panel-body table-responsive">
 
                   <table class="table history-table">
-                    <thead>
+                    {{-- <thead>
                         <tr>
                             <th>Recipient</th>
                             <th>Link</th>
                             <th>Date</th>
                             <th>Received</th>
                         </tr>
-                    </thead>
+                    </thead> --}}
                     <tbody>
 
                     @foreach ($messages as $message)

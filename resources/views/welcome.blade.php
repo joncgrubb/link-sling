@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="text-center welcome-title"><i class="fa fa-commenting fa-5x link-title" aria-hidden="true"></i></i><h1 class="sling-title animated zoomInRight">Link-Sling</h1></div>
-            <div class="panel panel-default sling-blurb-title-panel"><h2 class="sling-blurb-title text-center">The easiest way to send web links and short messages to your friends and family from PC to mobile on the web!</h2></div>
+            <div class="panel panel-default sling-blurb-title-panel"><h2 class="sling-blurb-title text-center">The easiest way to send web links and text messages to your friends and family from PC to mobile on the internet!</h2></div>
             <blockquote><h3 class="sling-blurb">Welcome to Link-Sling! We utilize the Twilio SMS service to make it easy for you and your friends to share web links and short messages from PC, Mac or Linux to any mobile phone. We don't require you to install any third party apps on your computer or recipient mobile device, making it as simple as creating an account and adding your contacts to start sharing!</h3></blockquote>
         </div>
     </div>

@@ -21,7 +21,7 @@
                       <div class="form-group{{ $errors->has('link') ? ' has-error' : '' }}">
                         <label for="link" class="col-sm-2 control-label">Link</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="link" id ="link" placeholder="Paste web link here..." required="true" oninvalid="this.setCustomValidity('Link field must not be blank')"
+                          <input type="text" class="form-control" name="link" id ="link" placeholder="Web link or text to send..." required="true" oninvalid="this.setCustomValidity('Link field must not be blank')"
                             oninput="setCustomValidity('')">
                           @if ($errors->has('link'))
                             <span class="help-block">

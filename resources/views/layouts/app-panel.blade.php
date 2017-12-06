@@ -58,24 +58,24 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav sling-nav">
                         @if (\Request::is('home'))
-                            <li><a href="{{ url('/home') }}"><button class="btn btn-default btn-sm active">Sling!</button></a></li>
+                            <li class="active"><a href="{{ url('/home') }}">Sling!</a></li>
                         @else
-                            <li><a href="{{ url('/home') }}"><button class="btn btn-default btn-sm">Sling!</button></a></li>
+                            <li><a href="{{ url('/home') }}">Sling!</a></li>
                         @endif
                         @if (\Request::is('contacts'))
-                            <li><a href="{{ url('/contacts') }}"><button class="btn btn-default btn-sm active">Contacts</button></a></li>
+                            <li class="active"><a href="{{ url('/contacts') }}">Contacts</button></a></li>
                         @else
-                            <li><a href="{{ url('/contacts') }}"><button class="btn btn-default btn-sm">Contacts</button></a></li>
+                            <li><a href="{{ url('/contacts') }}">Contacts</a></li>
                         @endif
                         @if (\Request::is('history'))
-                            <li><a href="{{ url('/history') }}"><button class="btn btn-default btn-sm active">History</button></a></li>
+                            <li class="active"><a href="{{ url('/history') }}">History</button></a></li>
                         @else
-                            <li><a href="{{ url('/history') }}"><button class="btn btn-default btn-sm">History</button></a></li>
+                            <li><a href="{{ url('/history') }}">History</a></li>
                         @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right text-navs">
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
