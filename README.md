@@ -75,7 +75,7 @@ In the other:
 
 ## Like the App?
 
-This was my final project for my 12 week Web Development Bootcamp at [Awesome Inc University](https://www.awesomeincu.com/) and I only had a week and half to make this happen. There is plenty left to do and new features to implement. If you'd like to get in touch my contact info is available at [my homepage](http://www.joncgrubb.com/#/)
+This was my final project for my 12 week Web Development Bootcamp at [Awesome Inc University](https://www.awesomeincu.com/) and I only had a week and half to make this happen. There is plenty left to do and new features to implement. If you'd like to get in touch, my contact info is available at [my homepage](http://www.joncgrubb.com/#/)
 
 ---
 
