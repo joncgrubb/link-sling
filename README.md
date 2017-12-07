@@ -11,27 +11,27 @@ Link-Sling utilizes the Laravel PHP framework and a PostgreSQL object-relational
 
 First, clone this repo:
 
-`git clone https://github.com/joncgrubb/link-sling.git`
+$ `git clone https://github.com/joncgrubb/link-sling.git`
 
 Install dependencies:
 
-`npm install`
+$ `npm install`
 
-`composer install`
+$ `composer install`
 
 Set up your local PostgreSQL database. Head on over to [PostgreSQL](https://www.postgresql.org/) if you need help installing and setting it up. Start by creating a new database and user:
 
-`psql`
+$ `psql`
 
-`CREATE USER username WITH PASSWORD 'password';`
+$ `CREATE USER username WITH PASSWORD 'password';`
 
-`CREATE DATABSE dbname OWNER username;`
+$ `CREATE DATABSE dbname OWNER username;`
 
-`\quit`
+$ `\quit`
 
 Create your local ENV file then copy/paste the contents of the supplied .env.example into it:
 
-`touch .env`
+$ `touch .env`
 
 Now you will need to set up a few free accounts with the services required for this app to work:
 
@@ -45,11 +45,11 @@ You will also need to download and unzip an awesome little tunneling tool, feel 
 
 Run your Laravel migrations now to get your database ready for the app:
 
-`php artisan migrate`
+$ `php artisan migrate`
 
 Now you can let ngrok (pronounced 'en-grok' as per Alan, the author) open a tunnel for your local server to speak to the outside world, that is the whole point of Link-Sling, afterall:
 
-`./ngrok http 8000`
+$ `./ngrok http 8000`
 
 You can now open a browser tab to localhost:4040 an utilize the ngrok web interface to inspect the Twilio API traffic you'll be having shortly.
 
@@ -61,11 +61,11 @@ Next are the Google reCaptcha fields in the .env. Navigate to your new reCaptcha
 
 Now serve your local version of Link-Sling. If you plan on tinkering with styling, functionality or anything else then utilize the built in webpack browser refresh. I typically use 2 Terminal tabs for this just to make my life easier, in one:
 
-`php artisan serve`
+$ `php artisan serve`
 
 In the other:
 
-`npm run watch`
+$ `npm run watch`
 
 (Note you will likely need to run this second command twice, as BrowserSync will need to build and install require dependencies first. Don't sweat if it fails, just run the command a second time.)
 
