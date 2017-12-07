@@ -29,6 +29,10 @@ Set up your local PostgreSQL database. Head on over to [PostgreSQL](https://www.
 
 `\quit`
 
+Generate a unique App Key or nothing will work! (You can see it afterwords in your ENV file):
+
+`php artisan key:generate`
+
 Create your local ENV file then copy/paste the contents of the supplied .env.example into it:
 
 `touch .env`
