@@ -10,7 +10,14 @@
 
                 <div class="panel-body">
 
+                    @if ($contacts->first() === NULL)
+                    <div class="row contact-row text-center">
+                        Add some contacts to get started!
+                    </div>
+                    @endif
+
                     @foreach ($contacts as $contact)
+
                     <div class="row contact-row">
                         <div class="col-xs-2 text-center">
                             <div class="avatar-circle">
