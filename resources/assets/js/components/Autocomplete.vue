@@ -1,6 +1,6 @@
 <template>
  <div>
-  <input type="text" autocomplete="off" name="recipient" id="recipient" placeholder="Enter Contact name" v-model="query" v-on:keyup="autoComplete" class="form-control" required="true" oninvalid="this.setCustomValidity('Please enter a valid Contact')"
+  <input type="text" autocomplete="off" name="recipient" id="recipient" placeholder="Start typing contact name" v-model="query" v-on:keyup="autoComplete" class="form-control" required="true" oninvalid="this.setCustomValidity('Please enter a valid Contact')"
   oninput="setCustomValidity('')">
   <div class="panel-footer" v-if="results.length && hide == false">
    <ul class="list-group">

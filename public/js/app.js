@@ -43264,7 +43264,7 @@ var render = function() {
         autocomplete: "off",
         name: "recipient",
         id: "recipient",
-        placeholder: "Enter Contact name",
+        placeholder: "Start typing contact name",
         required: "true",
         oninvalid: "this.setCustomValidity('Please enter a valid Contact')",
         oninput: "setCustomValidity('')"
